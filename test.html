@@ -1,0 +1,1508 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=utf-8>
+    <meta http-equiv=X-UA-Compatible content="IE=edge">
+    <meta name=viewport content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Buy and sell Stablecoins - Counter Network</title>
+    <meta name=robots content="index, follow">
+    <meta name=description
+        content="Counter Network is one of the world’s first widely-available peer-to-peer cryptocurrency exchange.">
+    <meta name=keywords content=Stablecoins,buy,sell>
+    <link rel=stylesheet href="/dist/counter.css.gz?v=pQBvSJbA0ACqECp5ls6b2leKtc9zopjEj5OnycbLzbQ">
+    <link rel=stylesheet href=//cdn.materialdesignicons.com/2.0.46/css/materialdesignicons.min.css> <script
+        id=ze-snippet src="//static.zdassets.com/ekr/snippet.js?key=f60896e7-a109-4d88-b32b-81dda93d445b"
+        type="4be02b1a5a84db4355af6332-text/javascript">
+    </script>
+    <script type="4be02b1a5a84db4355af6332-text/javascript">
+        const localization = {
+            "Translate_UIMessage_ModifyAdvert_Success": "Your advertisement has been updated successfully.",
+            "Translate_Common_AdvancedSearch": "Advanced Search",
+            "Translate_Deposit_DestinationTagLabel": "Destination Tag",
+            "Translate_Trade_Receipt": "Receipt",
+            "ErrorCode_ErrorInvalidUser": "{0} Invalid User",
+            "EmailSubject_RejectIdentity": "Identity verification is rejected",
+            "EmailContent_ReferredFriend": "Thank you very much for spreading the word! {0}, is now on Counter Network, with your referral. <br/>We are grateful for your help and will be sharing {1}% of the trading fees that {2} pays on Counter Network, with you!",
+            "Translate_Common_SellPrice": "Sell Price",
+            "EmailContent_RejectIdentity": "Your submission for Identity verification has been rejected because:{0} <br/> Kindly login to your Counter Network account and resubmit the required information.",
+            "EmailContent_DepositCompleted": "The deposit of {1} {0} has been successfully credited to your account.<br/> <b>Transaction Info:</b> <br/> <ul> <li>Received Amount: {2} </li> <li>Transaction hash (TxID): {3}</li></ul>",
+            "Translate_UIMessage_CreateAdvert_Success": "\u001dThe advertisement has been created successfully.",
+            "EmailButtonLabel_TradeDisputeForBuyer": "View now!",
+            "Translate_ViewAdvert_Confirmation": "Confirmation?",
+            "Translate_Common_TermsOfTrade": "Terms of trade",
+            "StatusGuide_Sell_Seller_Disputing": "<li>Please provide more information to Counter Network Admins <a href=\"https://support.counter.network/hc/en-us/requests/new\">here</a>.</li>\n<li>After the dispute is resolved, your {tickerA} may be released to you or to the buyer.</li>",
+            "Translate_Profile_TabPassword": "Password",
+            "Translate_DepositModel_WalletAddressCopied": "Copied.",
+            "AdvertSummary_SellAdvertViewSummary": "Sell {0} to {1} for {2}",
+            "Translate_CookieMessage": "By using our site, you acknowledge that you have read and understand our <a href='{0}'>Cookie Policy, Privacy Policy, and our Terms of Service</a>.",
+            "Translate_Trade_NetReceive": "Net receive",
+            "Translate_Common_DeletedAt": "Deleted at",
+            "ErrorCode_ErrorBadRequest": "Bad Request",
+            "Translate_ViewAdvert_TradeAmount": "Trade amount",
+            "Resource.PaymentType.Banktransfer": "Bank transfer",
+            "EmailSubject_TradeCompletedForSeller": "Trade #{0} is completed",
+            "Translate_Home_FromPeopleAroundYou": "<span class='no-wrap'>from people</span>  <span class='no-wrap'>near you</span>",
+            "Translate_Wallet_TabTransferFunds_TotalBalance": "Total balance",
+            "Translate_Home_Intro2_Title_ReceiveMultipleOffersPerAdvert": "Receive Multiple Offers per Advert",
+            "Translate_Common_CompletedTrades": "Completed trades",
+            "Translate_Wallet_TabTransactions_TransactionDetail": "Transaction details",
+            "Translate_Account_ResendEmailConfirm_Message": "Please enter your email address to receive the verification email.",
+            "Translate_DepositModel_Grin_WalletUrl": "Wallet address",
+            "Translate_Affiliate_InviteYourFriend": "Invite your friends",
+            "Translate_CaptCha_CookieRequired": "This website uses cookies, please accept the cookie to get the best experience on our website.",
+            "FullAddressLabel_128": "Wallet Address with Memo",
+            "FullAddressLabel_155": "Wallet Address with Memo",
+            "FullAddressLabel_156": "Wallet Address with Memo",
+            "Translate_Profile_Tab2Fa_Enable2FA": "Enable 2FA",
+            "Translate_SearchResult_LoadMore": "Load more adverts",
+            "Translate_Deposit_AgreeTerm": "I have read and understood the notice.",
+            "Translate_Counter_Slogan": "Buy and sell Stablecoins",
+            "AdvertTradeAction_PaymentMade": "Payment made",
+            "Translate_Profile_VerifyEmailNote": "All notification emails will be sent to this email address.",
+            "Translate_DepositModel_Grin_Note": "Please make sure the <b>https://</b> prefix is included in the GRIN address when depositing GRIN to your Counter Network wallet.",
+            "StatusGuide_Buy_Swap_Buyer_Pending": "<li>You can complete the trade after reviewing all trade information or you can reject it.</li>\n<li>The coins will be auto-swapped after the trade is completed.</li>",
+            "Translate_Account_Register_Button": "Register",
+            "Translate_UIMessage_ViewTrade_FileSize_Warning": "File <b>{0}</b> too large. this file is ${1} MB exceeds the maximun file size is 5 MB.",
+            "EmailSubject_OfferPaymentMade": "Trade #{0} Payment is completed",
+            "Translate_Advert_YourAdverts": "Your adverts",
+            "eUserNotificationEvent_TradeBuyerDispute": "Trade #{tradeId}: The trade has been disputed.",
+            "Translate_Account_LogInWith2Fa_Title": "Two-factor authentication (2FA)",
+            "Translate_CaptCha_Required": "The Captcha field is required.",
+            "SuccessCode_SuccessUpdate": "The {0} has been successfully updated.",
+            "Translate_Common_Verified": "Verified",
+            "EmailSubject_ApproveIdentity": "Identity verification is approved",
+            "EmailButtonLabel_OfferMakePayment": "View now!",
+            "Translate_Common_YourPrice": "Your price",
+            "Translate_Common_NormalSearch": "Normal Search",
+            "EmailButtonLabel_EmailVerification": "Confirm",
+            "Translate_Account_ResendEmailConfirm_Button": "Resend email",
+            "Translate_Common_Username": "Username",
+            "Translate_Account_Register_QuestionAlreadyHaveAnAccount": "Already have an account?",
+            "EmailSubject_OfferRejected": "Offer #{0} is rejected",
+            "eUserNotificationEvent_TradeCancelled": "Trade #{tradeId}: The trade has been cancelled.",
+            "AdvertTradeLogContent_Pending": "<b>{0}</b> has opened the trade.",
+            "Translate_Common_ConfirmPassword": "Confirm password",
+            "ErrorCode_ErrorUnAuthenticated": "Un-Authenticate.",
+            "Translate_Submission_SubmitPage_OtherInformation": "Other information",
+            "Translate_Common_Withdrawal": "Withdrawal",
+            "EmailButtonLabel_RejectIdentity": "Login now!",
+            "ErrorCode_ErrorDoNotEnoughBalance": "Insufficient balance. Please deposit {0} {1} to continue.",
+            "Translate_ViewProfile_TabUserInformation_AccountCreated": "Account created",
+            "Translate_Deposit_AddressLabel": "Wallet Address",
+            "Translate_UIMessage_ViewTrade_AcceptOffer_Title": "Accept Offer",
+            "Crypto_Deposit_Note_130": "<li>Please make sure the <b>https://</b> prefix is included in the GRIN address when depositing GRIN to your Counter Network wallet.</li>",
+            "Crypto_Deposit_Note_128": "<li>To receive BNB on Counter Network, both address and memo must be inputted or the transaction will be failed.</li>",
+            "Crypto_Deposit_Note_129": "<li>To receive XRP on Counter Network, both address and destination tag must be inputted or the transaction will be failed.</li>",
+            "Crypto_Deposit_Note_155": "<li>To receive XLM on Counter Network, both address and memo must be inputted or the transaction will be failed.</li>",
+            "Crypto_Deposit_Note_156": "<li>To receive ONE on Counter Network, both address and memo must be inputted or the transaction will be failed.</li>",
+            "Crypto_Deposit_Note_150": "<li>Only send ERC20 USDT to USDT address on Counter Network.</li>",
+            "Translate_Common_GoToHome": "Go to Home",
+            "Translate_Trade_Buying": "You buy",
+            "SuccessCode_SuccessCancelled": "The {0} has been successfully cancelled.",
+            "Translate_Wallet_TabTransactions_ResendEmailConfirm": "Re-send email",
+            "Translate_Common_NumberOfTrade": "No. of Trades",
+            "EmailContent_LoginNotification": "There is a login to your account a moment ago. <br/> <ul> <li><b>Date/Time: </b> {0}</li><li><b>Device: </b> {1} </li> <li><b>Browser: </b>{2}</li>  <li><b>IP Address: </b> {3}</li><li><b>Location: </b>{4}</li> </ul> <br/> If you did not perform this action, please click on the button below to lock your account.",
+            "StatusGuide_Buy_Seller_Pending": "<li>Please wait for the buyer to accept the trade or you can cancel it.</li>",
+            "Translate_ErrorTitle": "Oops",
+            "Translate_Common_Receive": "Receive",
+            "Translate_UIMessage_ViewTrade_PaymentMade_Title": "Payment Confirmation",
+            "Translate_Common_SelectCrypto": "Select Crypto",
+            "Translate_Home_Intro1_Content_MultiAssetSupport": "Many digital assets are hard to purchase with your local currency. We constantly evaluate and add new digital assets to our platform.",
+            "EmailSubject_ReferredFriend": "Thank you! Your friend is now on Counter Network",
+            "Translate_UIMessage_ViewTrade_MakePayment_Warning": "Seller's {0} has been frozen for this trade and the seller cannot cancel the trade after this step. Do you want to make payment now?",
+            "Translate_Withdrawal_Result_Fail_TokenInvalid_Title": "Withdrawal token is invalid",
+            "Translate_Account_RegisterEmailConfirmTitle": "Successful Registration!",
+            "Translate_Affiliate_UnAuthen_Invite_Button": "Invite your friends now!",
+            "eUserNotificationEvent_KycApproved": "Your identity verification submission has been approved.",
+            "Translate_Common_Continue": "Continue",
+            "Translate_UIMessage_ViewTrade_AcceptOffer_Waning": "Seller's coins will be frozen when this trade is accepted. Are you sure you want to accept this offer?",
+            "EmailSubject_ResetPassword": "Reset Password",
+            "AdvertSummary_BuyTransactionSummary": "Buying {0} {1} by {2} {3}",
+            "Translate_Home_Intro2_Content_MultipleAdvertsPerDigitalAsset": "Post adverts with different margins, payment methods or any term you name!",
+            "Translate_SearchBar_TabBuy": "I want to buy",
+            "Translate_Affiliate_ReferralLinkCopied": "Copied.",
+            "Translate_PublishAdvert_Warning": "Your identity has not been verified yet. Please verify your identity to increase your account's level of trust.",
+            "Translate_ViewTrade_ReceiptsUpdated": "The buyer sent you the payment receipts.",
+            "AdvertTradeAction_Dispute": "Dispute",
+            "TxStatus_Incoming_Completed": "Completed",
+            "Translate_Home_Intro2_Content_Testimonial": "Counter Network is one of the world’s first widely-available peer-to-peer cryptocurrency exchange.",
+            "AdvertTradeAction_MakePayment": "I'm making the payment!",
+            "Translate_Withdrawal_AgreeTerm": "I have read and understand it.",
+            "Translate_Affiliate_UnAuthen_Title": "2 Simple Steps",
+            "ErrorCode_ErrorFailedToBeDeleted": "{0} failed to be deleted.",
+            "Translate_Footer_SelectLanguage": "Language",
+            "Translate_Withdrawal_Result_Fail_TokenExpired_Message": "Your withdrawal token has expired after 45 minutes or you have confirmed your withdrawal request.",
+            "Translate_Wallet_TabTransferFunds_AvailableBalance": "Available balance",
+            "Translate_Withdraw_DestinationTagNote": "The Destination Tag is extra information unique to each XRP wallet. Leaving this out will lead to significant delays or failed transactions.",
+            "Translate_Profile_Tab2fa": "Two-factor Authentication (2FA)",
+            "Translate_UIMessage_2FaInvalid": "2FA code is invalid.",
+            "TxStatus_Outgoing_CoinSending": "Coin Sending",
+            "Translate_NavBar_Profile": "Profile",
+            "Translate_Home_SellAdvertsNotAvailable": "There are currently no {0} sell adverts.",
+            "StatusGuide_Sell_Seller_MakingPayment": "<li>Please wait for the buyer to make payment, or you can dispute the trade if not receiving the payment within a certain time.</li>",
+            "Translate_PublishAdvert_IWantToReceive": "I want to receive",
+            "Translate_Account_LockedOut": "This account has been locked out, please try again later or contact support <a href='https://support.counter.network/hc/en-us/requests/new'>here</a>.",
+            "Translate_Common_TxLimit": "Transaction limits",
+            "Translate_Home_Intro3_Title": "Join the most secure peer-to-peer exchange now!",
+            "Translate_NavBar_ReferAndEarn": "Referral",
+            "Translate_Common_IdentityUnVerified": "Identity Unverified",
+            "eUserNotificationEvent_Commission": "You have received a commission of {amount} {ticker}.",
+            "Translate_PublishAdvert_PostAdvertisement": "Post an advertisement",
+            "Translate_DepositModel_DonotHaveWallet": "You do not have a {0} wallet address yet.",
+            "Translate_Common_PlaceHolder_ChooseFromSource": "Choose Reference Price",
+            "UserNotificationLabel_NoMessages": "You have no message.",
+            "ErrorCode_ErrorResourceNotFound": "{0} not found.",
+            "Translate_Profile_YourAccount": "Your account",
+            "EmailButtonLabel_OfferCanceled": "Make another offer now!",
+            "Translate_ManageProfile_ChangeEmail_SenRequestSuccess": "A confirmation email has been sent to {0}.<br/> Please check your email to confirm this change.",
+            "EmailNote_DefaultNoteContactToSupport": "If you did not perform this action, please contact us <a href='https://support.counter.network/hc/en-us/requests/new'>here</a>.",
+            "Translate_Trade_Waiting": "You receive",
+            "Translate_SearchResult_AdvertSearchResult": "Search Adverts",
+            "EmailButtonLabel_TradeCompletedForBuyer": "View now!",
+            "Translate_ViewTrade_ClickToUpload": "Upload your receipts",
+            "ErrorCode_ErrorIsRequired": "{0} is required.",
+            "Translate_Account_ClickToLogIn": "Log in",
+            "Translate_Common_PlaceHolder_ChoosePaymentMethod": "Choose a Payment method",
+            "Translate_Common_Description": "Description",
+            "StatusGuide_Buy_Swap_Buyer_Completed": "<li>The coins have been auto-swapped and the {tickerA} has been released to you.</li>",
+            "Translate_Account_ConfirmResetPassword_Title": "Reset Password",
+            "Translate_Home_Intro1_Title_CommunityFriendly": "Community Friendly",
+            "SuccessCode_DeleteAdvertSuccess": "Your advert has been successfully deleted.",
+            "EmailSubject_EmailChangeConfirmation": "Email change confirmation",
+            "Translate_UIMessage_ViewTrade_CancelOffer_Title": "Cancel Trade",
+            "Translate_UIMessage_Register_EmailHasBeenTaken": "The email address has been taken.",
+            "Translate_Common_CustomPrice": "Custom Price",
+            "Translate_FreezeDescription_Trade": "Locked for Trade #{0}",
+            "Translate_AboutUs_FeaturedIn": "We’ve been featured in",
+            "ErrorCode_ErrorUpload": "Error uploading {0}.",
+            "EmailNote_ResetPassword": "If you did not perform this action, it is likely that another user has entered your email address by mistake and your account is still secure.",
+            "Translate_Affiliate_Description": "Invite & Earn 22% Rewards",
+            "Deposit_Agree_Term_129": "I will enter my Destination tag when depositing XRP.",
+            "Deposit_Agree_Term_128": "I will enter my Memo when depositing BNB.",
+            "Deposit_Agree_Term_155": "I will enter my Memo when depositing XLM.",
+            "Deposit_Agree_Term_156": "I will enter my Memo when depositing ONE.",
+            "Deposit_Agree_Term_150": "I will send ERC20 USDT only.",
+            "Translate_UIMessage_ViewTrade_SuccessDisputed": "The disputed trade may be completed or cancelled after all information is reviewed. Please provide more details in the next step.",
+            "Translate_ViewTrade_SubmitRating": "Submit rating",
+            "Translate_Submission_2Fa_Reviewing": "Your 2FA request is under review and this can take up to 1 business day. You will be notified once it is done.",
+            "AdvertTradeStatus_Pending": "Pending",
+            "eUserNotificationEvent_OfferAccepted": "Trade #{tradeId}: The trade has been accepted.",
+            "Translate_Wallet_TabTransactions_FromAddress": "From",
+            "Translate_PublishAdvert_PriceAndLimits": "Price and Limits (Optional)",
+            "ErrorCode_ErrorNotVerified": "{0} is unverified.",
+            "Translate_Common_IdentityVerified": "Identity Verified",
+            "EmailButtonLabel_OfferAccepted": "View now!",
+            "Translate_Account_LogIn_Title": "Login",
+            "Translate_Affiliate_HaveNoFriends": "You have no friends, invite friends to get rewards.",
+            "StatusGuide_Sell_Swap_Buyer_Rejected": "<li>The trade has been rejected and the {tickerB} has been released back to you.</li>",
+            "SuccessCode_SuccessCreate": "The {0} has been successfully created.",
+            "SuccessCode_SuccessVerified": "{0} verified.",
+            "Translate_Footer_AboutUs": "About us",
+            "Translate_Account_LogIn_LogInButton": "Log in",
+            "ErrorCode_ErrorNotLastSubmission": "The user has submitted a new verification request, please update the latest submission.",
+            "Translate_UIMessage_Withdrawal_Error_BalanceInsufficient": "Insufficient Balance",
+            "Translate_FreezeDescription_Deposit": "Incoming deposit",
+            "Translate_Advert_TabActive": "Active",
+            "SuccessCode_SuccessDelete": "The {0} has been successfully deleted.",
+            "EmailButtonLabel_NewOfferReceived": "View now!",
+            "Translate_UIMessage_ViewTrade_CompleteOffer_Title": "Complete Trade",
+            "Translate_Withdraw_EnterDestinationTag": "Enter Destination Tag",
+            "DestinationTagLabel_128": "Memo",
+            "DestinationTagLabel_156": "Memo",
+            "DestinationTagLabel_155": "Memo",
+            "Translate_Common_ShowMore": "Show more",
+            "Translate_Common_ShowLess": "Show less",
+            "TxStatus_Outgoing_PendingHotWalletTopUp": "Pending",
+            "Translate_Wallet_TabTransferFunds": "Wallets",
+            "Translate_ViewTrade_FeeDeducted": "Fee deducted",
+            "Translate_ViewProfile_TabUserInformation": "User's Information",
+            "Translate_Home_Intro1_Title_Secure": "Secure",
+            "Translate_NavBar_Admin_Dashboard": "Admin Dashboard",
+            "EmailNote_DefaultGoodbye": "Kind Regards, <br/> Counter Network Team",
+            "Translate_Home_Intro2_Title_AdvertsRunForever": "Adverts Run Forever",
+            "eUserNotificationEvent_TradeCompleted": "Trade #{tradeId}: The trade has been completed.",
+            "Translate_Home_Intro1_Content_Secure": "Counter Network adopts industry best practices to secure your funds. Majority of funds are held offline in vaults with 24/7 security.",
+            "Translate_AboutUs_DevelopmentOffice": "Development Office",
+            "Translate_Withdrawal_Dt_Warning_Message": "Please confirm that the recipient does not require you to enter a {0} before proceeding.",
+            "StatusGuide_Sell_Seller_Pending": "<li>You can accept the trade after reviewing all trade information or you can reject it.</li>",
+            "Translate_Common_Name": "Full name",
+            "Translate_Common_More": "More",
+            "Translate_Common_Date": "Date",
+            "Translate_Common_Copy": "Copy",
+            "Translate_Common_Back": "Back",
+            "Translate_Common_Edit": "Edit",
+            "Translate_Common_Time": "Time",
+            "Translate_Common_View": "View",
+            "Translate_Common_Sell": "Sell",
+            "Translate_Common_Send": "Send",
+            "Translate_Common_Save": "Save",
+            "TxStatus_Outgoing_Cancelled": "Cancelled",
+            "EmailButtonLabel_DepositCompleted": "View now!",
+            "Translate_UIMessage_Login_RequireConfirmEmail": "Please check your email inbox for verification email before you are able to login.",
+            "Translate_Wallet_TabTransactions_TransactionHash": "Transaction Hash (TxID)",
+            "Translate_Wallet_TabTransactions_ToAddress": "To",
+            "Translate_ViewTrade_ReportUser": "Report User",
+            "ErrorCode_ErrorCreating": "An error occurred while creating {0}.",
+            "Translate_Wallet_TabTransferFunds_PendingAmount": "Pending amount",
+            "EmailButtonLabel_EarningCommission": "Refer another friend!",
+            "AdvertSummary_BuyAdvertViewSummary": "Buy {0} from {1} by {2}",
+            "Translate_Home_Intro1_Content_CommunityFriendly": "We strive to build a community of trustworthy and reliable traders around you. Our experienced operations team is here to shape the community and handle disputes fairly.",
+            "Translate_Submission_SubmitPage_Documents": "Documents",
+            "Translate_AdvertIndex_DeleteAdvertTitle": "Delete Advert",
+            "Translate_ViewAdvert_TermOfTradeWith": "Terms of trade with",
+            "EmailContent_OfferPaymentMade": "{0} has completed payment for Trade #{1} of {3} {2}. Please check that the payment has been made and complete the trade as soon as possible by updating the trade on Counter Network.",
+            "Translate_Profile_VerifyIdentityNote": "Verifying your identity to increase the level of trust of your account.",
+            "Translate_Common_PlaceHolder_Minimum": "Minimum",
+            "Translate_Account_Enable2Fa_MissingToken": "Please enter the six-digit token.",
+            "AdvertTradeAction_Reject": "Reject",
+            "Translate_Trade_YourTrades": "Your trades",
+            "Translate_UIMessage_Withdrawal_Error_AddressEmpty": "Please enter the address.",
+            "EmailButtonLabel_OfferPaymentMade": "View now!",
+            "Translate_ManageProfile_ChangeEmail_ConfirmChangeToNewEmail_Fail_Message": "Your confirmation is invalid because this action has been completed or the link has been expired.",
+            "AdvertTradeLogContent_PaymentMade": "<b>{0}</b> has made the payment.",
+            "EmailContent_InviteFriend": "Your friend, {0}, has been using Counter Network, the peer-to-peer cryptocurrency portal and thought you might want to give it a shot. <br/>Sign up with us and make {1}’s experience on Counter Network extra special!",
+            "EmailSubject_NewOfferReceived": "New Offer #{0}",
+            "AdvertTradeStatus_PaymentMade": "Payment Made",
+            "Translate_PublishAdvert_ModifyButton": "Update advertisement",
+            "Translate_Common_TradeVolume": "Trade volume",
+            "Crypto_Deposit_Note_14": "<li>This is mainnet ZIL address. <br/> DO NOT SEND ERC20 ZIL here as it will result in a permanent loss of your tokens.</li>",
+            "Translate_Common_BuyPrice": "Buy Price",
+            "TxStatus_Outgoing_SendingEmailConfirm": "Pending Email Confirmation",
+            "AdvertTradeLogContent_Completed": "<b>{0}</b> has completed the trade.",
+            "Translate_Advert_Type": "Advert type",
+            "Translate_Withdrawal_Result_Fail_TokenInvalid_Message": "Your token is invalid because your withdrawal request has been processed or cancelled.",
+            "EmailContent_TradeCompletedForBuyer": "Your trade #{0} to buy {4} {3} by {2} {1} is successful and the {3} has been credited to your account.",
+            "ErrorCode_ErrorPendingReview": "You already have another {0} pending review.",
+            "Translate_PublishAdvert_IWantTo": "I want to",
+            "ErrorCode_Withdrawal_XRPRequireDestinationTag": "This address requires Destination tag to receive XRP.",
+            "eUserNotificationEvent_WithdrawalSuccessful": "Withdrawal completed: {amount} {ticker} was withdrew from your account.",
+            "Translate_Profile_VerifyAccount": "Verify Account",
+            "StatusGuide_Buy_Swap_Seller_Cancelled": "<li>The trade has been cancelled and the {tickerA} has been released back to you.</li>",
+            "Translate_Trade_Selling": "You sell",
+            "Translate_Affiliate_ProgramDetails_Five": "Commission will be credited to the referrer according to the cryptocurrency transacted by the referred user.",
+            "Translate_Affiliate_ProgramDetails_Four": "Commission will be credited immediately after a trade is completed.",
+            "Translate_Account_ForgotPassword_ResetMyPasswordBtn": "Reset Password",
+            "Translate_AboutUs_Message": "Counter Network helps you to create a pool of traders quickly and directly with the suitable tools you need to empower every trade, for simplicity and autonomy.",
+            "EmailButtonLabel_OfferRejected": "Make another offer now!",
+            "StatusGuide_Buy_Seller_MakingPayment": "<li>Please wait for the buyer to make payment, or you can dispute the trade if not receiving the payment within a certain time.</li>",
+            "Translate_UIMessage_ViewTrade_ReachLimitReceipts": "The maximum number of receipts is 5. Please remove one of current receipts then continue.",
+            "Translate_Profile_Tab2Fa_QuestionReset2fa": "Reset 2FA?",
+            "EmailContent_OfferCanceled": "Your trade #{0} of {2} {1} is cancelled.",
+            "Translate_Affiliate_ProgramDetails_ThreeNote": "*Fees and rates shown are for used for the purpose of representation.",
+            "Translate_Affiliate_ReferralCodeApplied": "The referral code has been applied successfully.",
+            "Translate_NavBar_Welcome": "Hi",
+            "Translate_Home_Intro2_Title_AdvertiseFirstDepositLater": "Advertise First, Deposit Later",
+            "EmailContent_ApproveReset2Fa": "Your submission for the 2FA reset request has been approved and your 2FA has been disabled. <br/> Kindly login to your Counter Network account and enable your 2FA again as soon as possible.",
+            "eUserNotificationEvent_UnlockedCoinFromTrade": "Trade #{tradeId}: {amount} {ticker} has been unlocked.",
+            "Translate_Home_LastedAdvert": "Latest Adverts",
+            "TxStatus_Outgoing_EmailConfirmed": "Email Confirmed",
+            "Translate_UIMessage_ResendVerificationEmail_UserAlreadyConfirm": "Email is not found, or has already been verified.",
+            "TxStatus_Outgoing_PendingDeductAmount": "Pending deduction amount",
+            "EmailContent_EmailChangeConfirmation": "There is a request to change your email address to {0}.<br/> <ul> <li>Date/Time: {1} </li> <li>Device: {2}</li> <li>IP Address: {3} </li></ul> <br/> <b>Please click on the button below only if you have made this request.</b>",
+            "AdvertTradeStatus_Completed": "Completed",
+            "Translate_Profile_EmailNote": "To change your Counter Network email address, enter your new email address here.",
+            "Translate_ViewTrade_ChatNote": "The messages are end-to-end encrypted and your privacy is protected.",
+            "Translate_ViewAdvert_WarningCannotTrade": "You cannot open trade on your own advert.",
+            "ErrorCode_ErrorNotOwner": "You cannot modify other user's {0}.",
+            "Translate_Common_PlaceHolder_Maximum": "Maximum",
+            "Translate_Account_LockedOut_Title": "Locked Account",
+            "Translate_PublishAdvert_IWantToPayBy": "I want to pay by",
+            "AdvertSummary_NoLimit": "No limit",
+            "EmailButtonLabel_TradeDisputeForSeller": "View now!",
+            "Translate_Withdrawal_UpdatedAmountAndDestinationTag": "{0} and Amount have been automatically updated. Please check again.",
+            "Translate_Common_Recipient": "Recipient",
+            "Translate_UIMessage_ViewTrade_TradeInvalid": "Trade invalid. The trade will be auto-cancelled. Please try to open trade again.",
+            "Translate_AboutUs_OurPartner": "Our Partner",
+            "Translate_UIMessage_ViewTrade_SuccessAccept": "The offer has been successfully accepted. </br>Seller's coin has been frozen for this trade.",
+            "Translate_ViewProfile_TabUserInformation_BuyFromUser": "Buy from {0}",
+            "Translate_Affiliate_ProgramDetails_Terms_Four": "In case the commission earned need to be reversed while it has already been withdrawn from the referrer’s account, it will result in a negative balance and the referrer will have to top up the account within 3 days to avoid financial penalties.",
+            "Translate_Affiliate_ProgramDetails_Terms_Five": "Counter Network reserves the right to change the terms and conditions and final interpretation of the referral program anytime, depending on the relevant factors.",
+            "Translate_Home_Intro2_Content_AdvertsRunForever": "Adverts will continue to run until you close it, even when trades are completed. Spend less time creating adverts.",
+            "Translate_UIMessage_Withdrawal_UpdatedDestinationTag": "Destination tag has been automatically updated. Please check again.",
+            "Translate_Common_UnTrust": "Untrust",
+            "StatusGuide_Sell_Seller_PaymentMade": "<li>Please check the buyer's payment carefully before completing the trade.</li>\n<li>You can dispute the trade if not receiving the payment within a certain time.</li>",
+            "AdvertTradeLogContent_MakingPayment": "<b>{0}</b> is making the payment.",
+            "EmailButtonLabel_RejectReset2Fa": "Login now!",
+            "SuccessCode_SuccessUpdateEnableAdvert": "{0} advert #{1} successfully.",
+            "Translate_Submission_Reviewing": "Your verification submission is under review and this can take up to 1 business day. You will be notified once it is done.",
+            "Translate_Submission_RequiredField": "Please upload your {0}.",
+            "EmailSubject_OfferAccepted": "Offer #{0} is accepted",
+            "Translate_Common_Transaction": "Transaction",
+            "Translate_Common_UnBlock": "Unblock",
+            "EmailButtonLabel_ApproveIdentity": "Login now!",
+            "Translate_Trade_TabPast": "Past",
+            "EmailContent_TradeCompletedForSeller": "Your trade #{0} to sell {2} {1} is successful and {1} has been automatically sent to {3}.",
+            "Translate_Account_VerifyPhone_Title": "Verify phone number",
+            "Translate_Common_PlaceHolder_ChooseCryptoCurrency": "Choose Cryptocurrency",
+            "Translate_Withdrawal_Verify_Result_Success_MainTitle": "Successful {0} Withdrawal",
+            "Translate_Affiliate_YouAreReferredBy": "You are referred by:",
+            "Translate_NavBar_GetStarted": "Register now",
+            "Translate_Home_GetStarted_YourEmail": "Your email address",
+            "Translate_SearchBar_TabSell": "I want to sell",
+            "Translate_Withdrawal_Result_Fail_TokenExpired_Title": "Withdrawal token is expired",
+            "StatusGuide_Buy_Seller_Completed": "<li>Your {tickerA} has been automatically released to the buyer.</li>",
+            "Translate_Common_CryptoCurrency": "Cryptocurrency",
+            "Translate_Common_EmailVerified": "Email Verified",
+            "Translate_UIMessage_ViewTrade_Swap_AcceptOffer_Waning": "Coins will be automatically swapped when you complete the trade. </br> Do you want to continue?",
+            "Translate_Common_Location": "Location",
+            "Translate_Common_Feedback": "Feedback",
+            "Translate_Affiliate_EnterReferralCode": "If you are referred by a friend, enter their referral code here:",
+            "Translate_UIMessage_ViewTrade_RejectOffer_Waning": "Are you sure you want to reject this offer?",
+            "Translate_Footer_Support": "Support",
+            "Translate_Common_CreateAt": "Created at",
+            "EmailContent_RejectReset2Fa": "Your submission for 2FA Reset request has been rejected because:{0} <br/> Kindly login to your Counter Network account and resubmit the required information.",
+            "Translate_ViewTrade_TotalReceive": "Total received",
+            "Translate_UIMessage_Withdrawal_UpdatedAmount": "Amount has been automatically updated. Please check again.",
+            "eUserNotificationEvent_Debit": "Trade #{tradeId}: {amount} {ticker} was deducted from your account.",
+            "EmailButtonLabel_ReferredFriend": "Refer another friend!",
+            "EmailContent_EarningCommission": "Congratulations! You have been credited a referral commission of {1} {0}, on {2}.",
+            "Translate_Affiliate_ReferralCodeCopied": "Copied.",
+            "Translate_ViewProfile_TabUserFeedback": "User's feedback",
+            "ErrorCode_ErrorKycDoesNotApproved": "You can only post an advert or create an offer after your identity verification is approved.",
+            "Translate_Common_Reviewing": "Reviewing",
+            "Translate_Profile_TabPassword_ChangePassword": "Change password",
+            "Translate_UIMessage_Withdrawal_Warning_DestinationTagEmpty_Title": "No Destination tag?",
+            "Translate_Account_Register_AgreePolicy": "I accept the Privacy Policy.",
+            "EmailSubject_DepositCompleted": "Successful {0} deposit",
+            "StatusGuide_Sell_Swap_Buyer_Cancelled": "<li>The trade has been cancelled and the {tickerB} has been released back to you.</li>",
+            "Translate_Common_FiatCurrency": "Fiat currency",
+            "Translate_ViewTrade_Chat": "Encrypted chat",
+            "SuccessCode_SuccessSubmit2FaRequest": "Your 2FA request has been successfully submitted. <br/>Please allow us some time to process your 2FA request.",
+            "StatusGuide_Buy_Seller_PaymentMade": "<li>Please check the buyer's payment carefully before completing the trade.</li>\n<li>You can dispute the trade if not receiving the payment within a certain time.</li>",
+            "SuccessCode_SuccessPendingReview": "You already have a {0} pending review.",
+            "Translate_UIMessage_ViewAdvert_OpenTradeSuccess": "Your offer has been sent to {0}.",
+            "Translate_Account_VerifyPhone_SentMessage": "Enter the verification code sent to your phone number.",
+            "StatusGuide_Buy_Buyer_Pending": "<li>You can accept the trade after reviewing all trade information or you can reject it.</li>",
+            "Translate_Account_ResendEmailConfirm_Title": "Resend Verification Email",
+            "eUserNotificationEvent_IncomingDeposit": "There is an incoming deposit of {amount} {ticker}.",
+            "ErrorCode_ErrorAlreadyApproved": "Your {0} has been approved.",
+            "Translate_Home_Intro1_Title_MultiAssetSupport": "Multi Asset Support",
+            "AdvertType_Sell": "Sell",
+            "Translate_Affiliate_InviteYourFriendNote": "Separate each email address with a comma.",
+            "UserNotificationLabel_PageTitle": "Notifications",
+            "Translate_Profile_Tab2Fa_SixDigitToken": "Six-digit token",
+            "Translate_Profile_VerifyNumberNote": "An SMS will be sent to verify your ownership of this number.",
+            "Translate_Trade_NetSend": "Total spending",
+            "TxStatus_Incoming_Pending": "Pending",
+            "Resource.PaymentType.Cashinperson": "Cash (in person)",
+            "Translate_Common_PlaceHolder_MarginPercentage": "Margin Percentage",
+            "StatusGuide_Buy_Seller_Accepted": "<li>Your {tickerA} has been locked.</li>\n<li>Please wait for the buyer to make payment or you can cancel the trade and the {tickerA} will be released back to you.</li>",
+            "AdBlockDetectedTitle": "Translate_Trade_Information",
+            "Translate_DepositModel_GenerateAddress": "Generate an address",
+            "ErrorCode_ErrorAlreadyExists": "{0} already exists.",
+            "Translate_Profile_Tab2Fa_2FaEnabled": "Two-factor authentication (2FA) is now enabled.",
+            "EmailSubject_TradeDispute": "Trade #{0} is disputed",
+            "Translate_ViewTrade_RatingSubmitted": "Rating submitted",
+            "Translate_Profile_VerifyEmail": "Verify Email",
+            "SuccessCode_SuccessAlreadyApproved": "You already have an approved {0}.",
+            "Translate_UIMessage_Register_InvalidReferralCode": "The referral code is invalid.",
+            "Translate_Affiliate_ProgramDetails_Terms": "Terms & Conditions",
+            "Translate_Affiliate_ProgramDetails_Three": "Commissions are calculated based on the trade fee and referral rate.<br/>Example: If referred friend completed trade with a fee of $10 and referral rate of 22%*. <br/>Commission received will be $10 x 22% = $2.2.<br/>*Fees and rates shown are for used for the purpose of representation.",
+            "EmailSubject_RejectReset2Fa": "2FA request is rejected",
+            "eUserNotificationEvent_KycRejected": "Your identity verification submission has been rejected.",
+            "UserNotificationLabel_LoadMore": "Load more",
+            "Translate_UIMessage_ViewTrade_SuccessMakingPayment": "Please make the payment directly to the seller and click on <b>Payment Made</b> as soon as possible.",
+            "Translate_Trade_Logs": "Logs",
+            "Translate_UIMessage_ViewTrade_RejectOffer_Title": "Reject Offer",
+            "Translate_Account_VerifyPhone_StartVerify": "Next",
+            "Translate_AboutUs_ImpactLives_Message": "We are driven to build features that matter to our customers most, in order to create an effective and efficient trading platform for anyone, anywhere.",
+            "AdvertTradeAction_Accept": "Accept",
+            "Translate_UIMessage_ResendVerificationEmail_AlreadyResendEmailConfirm": "You have requested an email verification recently. Please try again in 5 minutes.",
+            "SuccessCode_SuccessSent": "{0} has been successfully sent.",
+            "StatusGuide_Sell_Buyer_Completed": "<li>The seller has received your payment and {tickerA} has been released to you.</li>",
+            "EmailSubject_LoginNotification": "Login Notification",
+            "Translate_Home_BuyNow": "Buy now",
+            "Translate_AboutUs_Headquater": "Headquarters",
+            "AdvertTradeAction_Cancel": "Cancel trade",
+            "Translate_PublishAdvert_TermsNote": "Use this to customise your trade terms (e.g. location, time and payment terms). Do not include any personal details here.",
+            "Translate_Affiliate_CannotReferYourself": "You cannot refer yourself.",
+            "Translate_Common_NoPendingAmount": "No pending amount",
+            "Translate_Common_PhoneVerified": "Phone Verified",
+            "AdvertTradeAction_Complete": "Complete",
+            "Translate_Common_PlaceHolder_FriendEmailAddress": "Friend's email address",
+            "AdvertTradeStatus_Accepted": "Accepted",
+            "Translate_AboutUs_Title": "Why local? <br/> Go global.",
+            "Translate_Home_BuyAdvertsNotAvailable": "There are currently no {0} buy adverts.",
+            "eUserNotificationEvent_LockedCoinForWithdrawal": "{amount} {ticker} has been locked for your withdrawal.",
+            "StatusGuide_Buy_Buyer_Accepted": "<li>Seller's {tickerA} has been locked.</li>\n<li>To start making payment to seller, please select <b>I'm making payment</b> so that the seller cannot cancel the trade.</li>",
+            "ErrorCode_ErrorIncorrectInputData": "Incorrect input data.",
+            "Translate_Affiliate_TabCommissionHistory": "Commission history",
+            "Translate_Account_LogIn_SigUpButton": "Sign up",
+            "Translate_DepositModel_Deposit_Title": "Deposit {0}",
+            "Translate_Account_ForgotPassword_Title": "Forgot Password",
+            "Translate_Account_LogInWith2Fa_Button": "Login with 2FA",
+            "Translate_DepositModel_Deposit_Guide": "Scan the QR code or copy your {0} wallet address below.<br/> Do note a minimum of <b>{1} confirmation(s)</b> is required to credit the funds to your wallet.",
+            "Translate_AboutUs_ForwardThinking_Title": "Robust",
+            "Translate_UIMessage_ViewTrade_DisputeOffer_Title": "Dispute Trade",
+            "Translate_AboutUs_ContactUs": "Contact us: <a href='https://support.counter.network/hc/en-us/requests/new'>https://support.counter.network</a>",
+            "Translate_UIMessage_ViewTrade_SuccessReject": "The offer has been rejected.",
+            "eUserNotificationEvent_DepositSuccessful": "Deposit completed: {amount} {ticker} has been credited to your account.",
+            "EmailSubject_ApproveReset2Fa": "2FA request is approved",
+            "Translate_UIMessage_Withdrawal_Zil_Withdrawal_Warning": "Counter Network wallets hold native ZIL. <br/> Please check that the receiving address is not ERC20.",
+            "Translate_ViewTrade_TotalTradeAmount": "Total spent",
+            "Translate_Trade_TabActive": "Active",
+            "AdvertTradeStatus_Rejected": "Rejected",
+            "Translate_Profile_Referral": "Referral",
+            "Translate_SubmissionRejectReasons": "Your submission has been rejected because:",
+            "Translate_UIMessage_ViewTrade_CancelOffer_Waning": "Are you sure you want to cancel this trade?",
+            "Translate_Profile_VerifyIdentity": "Verify Identity",
+            "StatusGuide_Buy_Buyer_PaymentMade": "<li>Seller's {tickerA} has been locked and the seller cannot cancel the trade now.</li>\n<li>Please attach your payment proof and wait for the seller to verify your payment.</li>\n<li>You can dispute the trade if the seller does not complete the trade within a certain time.</li>",
+            "StatusGuide_Buy_Buyer_Disputing": "<li>Please provide more information to Counter Network Admins <a href=\"https://support.counter.network/hc/en-us/requests/new\">here</a>.</li>\n<li>After the dispute is resolved, your {tickerA} may be released to you or to the buyer.</li>",
+            "Translate_UIMessage_CancelWithdrawal_Success": "Your withdrawal of {1} {0} has been cancelled successfully.",
+            "EmailSubject_OfferCanceled": "Trade #{0} is cancelled",
+            "Translate_Common_WarningAccountNotVerify": "This account has not been verified. Please be careful when you trade with this user.",
+            "Translate_Common_Close": "Close",
+            "Translate_UIMessage_Login_2FaInvalid": "2FA code is invalid.",
+            "Translate_Common_Block": "Block",
+            "Translate_Common_Buyer": "Buyer",
+            "Translate_Common_Email": "Email",
+            "Translate_Common_Error": "Error",
+            "Translate_Common_Apply": "Apply",
+            "ErrorCode_ErrorFailedToBeUpdated": "{0} failed to be updated.",
+            "Translate_Common_Trust": "Trust",
+            "Translate_Common_Total": "Total",
+            "Translate_Common_Terms": "Terms",
+            "StatusGuide_Sell_Swap_Buyer_Completed": "<li>The coins have been auto-swapped and the {tickerA} has been released to you.</li>",
+            "Translate_ViewTrade_ChatTooltip": "The messages are end-to-end encrypted and your privacy is protected. However, an admin can read your messages if either party initiates a dispute.",
+            "Translate_Common_Price": "Price",
+            "Translate_ViewProfile_TabUserInformation_IdentityVerified": "Identity Verified",
+            "AdBlockDetectedWarningMessage": "We have detected that you are using Adblocker.<br/>\nPlease turn it off to continue using our service.",
+            "TxStatus_Incoming_WaitToConfirm": "Pending confirmation",
+            "Translate_AboutUs_CommunitySecure_Message": "We leverage on modern anti-counterfeiting measures actively practised by large exchanges and funds to help create a secure trading environment.",
+            "Translate_UIMessage_ViewTrade_SuccessCancelled": "The offer has been successfully cancelled.",
+            "EmailButtonLabel_LoginNotification": "Lock account",
+            "Translate_NavBar_Logout": "Log out",
+            "eUserNotificationEvent_Credit": "Trade #{tradeId}: {amount} {ticker} was credited to your account.",
+            "Translate_UIMessage_Withdrawal_Error_CheckAmount": "Amount must be greater than 0.",
+            "Translate_ViewAdvert_YouReceive": "You receive",
+            "Translate_Web_Description": "Counter Network is one of the world’s first widely-available peer-to-peer cryptocurrency exchange.",
+            "Translate_Profile_BasicUserInformation": "Basic User's Information",
+            "TxStatus_Outgoing_Failed": "Failed",
+            "Translate_Home_BuyAndSell": "Buy & Sell Stablecoins",
+            "EmailContent_NewDepositDetected": "An incoming deposit of {0} {1} to your account has been detected on the blockchain. You will be notified when the deposit is successful.",
+            "Translate_UIMessage_ViewTrade_PaymentMade_Waning": "Please ensure that your payment has been completed before proceeding. You will only receive coins after the seller receives your payment.",
+            "Translate_Common_EmailAddress": "Email address",
+            "Translate_Profile_TabProfile": "Profile",
+            "Translate_Common_Deposit": "Deposit",
+            "Translate_Wallet_CreateWallet_Success": "Created {0} address successfully.",
+            "SuccessCode_SuccessSenRequestWithdrawal": "Please check your email and confirm your withdrawal request.",
+            "Translate_UIMessage_ViewAdvert_VerifyAccount": "Verify your account to start your trading.",
+            "Translate_Home_TitleRight": "A peer-to-peer cryptocurrency portal",
+            "Translate_UIMessage_Withdrawal_Warning_AmountAdjusted": "Amount has been adjusted.<br/> The maximum withdrawal amount is {0} {1}.",
+            "Translate_DepositModel_DestinationTagCopied": "Copied.",
+            "StatusGuide_Sell_Swap_Seller_Completed": "<li>The coins have been auto-swapped and the {tickerB} has been released to you.</li>",
+            "Translate_Common_For": "For",
+            "Translate_Common_Fee": "Fee",
+            "Translate_Common_Buy": "Buy",
+            "Translate_Common_Any": "Any",
+            "Translate_Affiliate_ProgramDetails_Two": "Commissions will only apply to fees the referred users pay when completing a trade on Counter Network.",
+            "Translate_Affiliate_ProgramDetails_One": "Participants will receive commissions only if the referred users apply the participants' referral code.",
+            "Translate_Common_CryptoAmount": "Crypto amount",
+            "TxType_AffiliateEarning": "Commission",
+            "Translate_Common_PlaceHolder_ChooseLocation": "Choose Location",
+            "AdvertSummary_SellTransactionSummary": "Selling {0} {1} for {2} {3}",
+            "Translate_ViewTrade_QuestionReportUser": "Report this user?",
+            "Translate_Common_PhoneNumber": "Phone number",
+            "EmailButtonLabel_NewDepositDetected": "View now!",
+            "Translate_Profile_PleaseCompleteYourProfile": "Please complete you profile!",
+            "Translate_UIMessage_ViewTrade_SuccessPaymentMade": "Seller has been notified of your payment. You can dispute the trade if not receiving responses from the seller after a certain time.",
+            "EmailButtonLabel_InviteFriend": "Register now!",
+            "Translate_Account_RegisterEmailConfirmMessage": "Thank you for your confirmation. <br/> Your Counter Network account has been created successfully!",
+            "ErrorCode_ErrorFailedToBeCreated": "{0} failed to be created.",
+            "TxStatus_Incoming_Failed": "Failed",
+            "SuccessCode_SuccessFulfill": "The {0} successfully fulfilled .",
+            "Translate_Affiliate_UnAuthen_Slogan": "Get paid 22% of trading fees in instantly<br/>whenever your referred friends pay fees to <br/>buy, sell tokens in Counter Network.",
+            "Translate_Account_Enable2Fa_Success": "Your 2FA has been successfully enabled. Your account will be logged out on all devices, please log in to continue.",
+            "Translate_Common_Confirmation": "Confirmation?",
+            "Translate_Account_LogIn_EmailOrUsername": "Username or Email address",
+            "ErrorCode_Withdrawal_Min_Algo": "The minimum withdrawal amount is 0.1 ALGO.",
+            "Translate_ViewTrade_YourRating": "Your rating",
+            "UserNotificationLabel_ViewAll": "View all",
+            "Translate_UIMessage_Login_EmailPasswordInvalid": "Email, Username or Password is invalid.",
+            "Translate_Advert_TabDeleted": "Deleted",
+            "ErrorCode_ErrorCannotOpenTrade": "Cannot get the trade quote. Please try again.",
+            "Translate_Affiliate_Title": "Referral",
+            "TxType_Debit": "Debit",
+            "Translate_UIMessage_ViewTrade_CompleteOffer_Waning": "Please ensure that you have received payment before proceeding. Your {0} will be automatically sent to the buyer after you complete the trade.",
+            "TxType_Award": "Reward",
+            "eUserNotificationEvent_OfferRejected": "Trade #{tradeId}: The trade has been rejected.",
+            "EmailNote_TradeDisputeForSeller": "Your amount of {1} {0} will be locked until the trade dispute is resolved. <br/> Please check the payment channel again and contact a Counter Network Admin <a href='https://support.counter.network/hc/en-us/requests/new'>here</a> for further instructions.",
+            "Resource.PaymentType.AllOnlineOffers": "All online offers",
+            "Translate_Affiliate_Slogan": "Receive 22% of trading fees whenever your friend completes a trade and pays fee!",
+            "ErrorCode_ErrorDoesNotMatch": "{0} does not match {1}.",
+            "Translate_TxDescription_Withdraw": "Sent {0} to {1}",
+            "Translate_Affiliate_TabSummary": "Summary",
+            "Translate_Account_ConfirmResentEmail_Title": "Resend Verification Email",
+            "ErrorCode_ErrorInsufficientBalance": "Insufficient balance.",
+            "ErrorCode_ErrorTransactionLimit": "The offer amount is outside the transaction limits.",
+            "Translate_Common_Warning": "Warning",
+            "EmailContent_ApproveIdentity": "Your submission for Identity verification has been approved.",
+            "Translate_Account_AccessResourceDenied": "You do not have access to this information.",
+            "Translate_UIMessage_ForgotPassword_AlreadyRequestResetAccount": "You have requested to reset your password recently. Please try again in 5 minutes.",
+            "Translate_Submission_GoToProfile": "Go to Profile",
+            "Translate_Common_NoResult": "No results found",
+            "Translate_Home_BuyFromSeller": "Buy {0} {1} from these sellers",
+            "AdvertTradeStatus_Cancelled": "Cancelled",
+            "Translate_Home_Intro1_Title_RealTimeChat": "Real‐time Chat",
+            "Translate_Affiliate_AlreadyApplied": "You have applied another referral code.",
+            "Translate_PublishAdvert_ReferenceExchange": "Reference Price",
+            "eUserNotificationEvent_WithdrawalCancelled": "Your withdrawal of {amount} {ticker} has been cancelled.",
+            "Translate_Account_LogIn_QuestionForgotPassword": "Forgot your password?",
+            "StatusGuide_Sell_Buyer_PaymentMade": "<li>Seller's {tickerA} has been locked and the seller cannot cancel the trade now.</li>\n<li>Please attach your payment proof and wait for the seller to verify your payment.</li>\n<li>You can dispute the trade if the seller does not complete the trade within a certain time.</li>",
+            "Translate_AboutUs_Founder_Introduciton": "Nicholas is the founder of Counter Network. After stumbling upon Bitcoin 7 years ago, discovering its true potential in being able to change the financial landscape dramatically, Nicholas started to venture into the blockchain landscape since 2016 in order to seek an answer towards creating an ecosystem for the community to harness the power of blockchain.",
+            "Translate_Common_Success": "Successful",
+            "Translate_Profile_TabPassword_CurrentPassword": "Current password",
+            "Translate_UIMessage_Withdrawal_Warning_DestinationTagEmpty_Message": "Please confirm that the recipient does not require you to enter a destination tag before proceeding.",
+            "eUserNotificationEvent_TwoFaRequestRejected": "Your 2FA request has been rejected.",
+            "Translate_Wallet_TabTransactions": "Wallet History",
+            "Translate_Common_PasswordRule": "Password must be at least 10 characters long, containing at least a number, an uppercase letter, a lowercase letter and a special character.",
+            "Translate_Affiliate_ProgramDetails": "Program Details",
+            "Translate_Withdrawal_Result_Fail_Processing_Title": "Processing...",
+            "Translate_Account_ConfirmResentEmail_Message": "Please check your email to verify your email address.",
+            "eUserNotificationEvent_TradeSellerDispute": "Trade #{tradeId}: The trade has been disputed.",
+            "Translate_DepositModel_Ripple_QrCodeNote3": "To receive XRP on Counter Network, both address and destination tag must be inputted or transaction will be failed.",
+            "Translate_DepositModel_Ripple_QrCodeNote2": "Please make sure that your wallet you are using to send supports destination tags.",
+            "Translate_DepositModel_Ripple_QrCodeNote1": "The QR code contains your destination tag:",
+            "Translate_Common_Margin": "Margin",
+            "Translate_Common_CurrentPrice": "Current price",
+            "Translate_ViewTrade_LoadingMore": "Loading more...",
+            "AdvertTradeStatus_Disputing": "Disputed",
+            "eUserNotificationEvent_ReceiveAnOffer": "Trade #{tradeId}: You received a new offer of {amount} {ticker}.",
+            "Translate_Web_Keyword": "Stablecoins, buy, sell",
+            "Translate_ManageProfile_ChangeEmail_ConfirmChangeToNewEmail_Success_Message": "Your new email address has been successfully updated. Please login to continue.",
+            "ErrorCode_ErrorUnknown": "An unhandled error occurred.",
+            "Translate_ViewProfile_TabUserFeedback_AverageRating": "Average rating",
+            "ErrorCode_ErrorAlreadySubmitRating": "You have already submitted a rating.",
+            "TxType_Credit": "Credit",
+            "Translate_UIMessage_Withdrawal_UpdatedAmountAndDestinationTag": "Destination Tag and Amount have been automatically updated. Please check again.",
+            "Translate_ViewAdvert_AdvertInfo": "Advert #{0} information",
+            "Translate_ViewProfile_Title": "{0}'s Profile",
+            "Translate_Affiliate_TotalAmount": "Total Amount",
+            "Translate_Common_Delete": "Delete",
+            "Translate_Common_PlaceHolder_ChooseCurrency": "Choose Currency",
+            "Translate_UIMessage_ViewAdvert_OpenTrade": "Open trade",
+            "Translate_Affiliate_Invite": "Invite",
+            "Translate_Account_ConfirmForgotPassword_Message": "We have sent an email to you.<br/>Please check your email to reset your password.",
+            "EmailButtonLabel_ApproveReset2Fa": "Login now!",
+            "Translate_Common_WithdrawalFee": "Fee",
+            "Translate_Withdrawal_Result_Fail_Processing_Message": "It takes a bit of time to process your order. <br/>We will inform you of your transaction once it is done.",
+            "Translate_Common_Filter": "Filter",
+            "Translate_Account_LogInWith2Fa_Message": "Please retrieve your 2FA code from the authenticator app in your device.",
+            "Translate_Withdraw_EnterWalletAddress": "Enter the {1} {0}",
+            "Translate_Common_Withdraw": "Withdraw",
+            "Translate_PublishAdvert_VerifyNow": "Verify now",
+            "Translate_Submission_SubmitPage_Rule_Title": "For a qualified submission, please make sure that:",
+            "SuccessCode_SuccessCreateRequestSendCoin": "Please check your email to confirm your withdrawal.",
+            "TxStatus_Outgoing_Completed": "Completed",
+            "Translate_PublishAdvert_TradeType": "Trade type",
+            "Translate_Common_CaptchaGuideline": "Please enter the code below:",
+            "Translate_Home_SellNow": "Sell now",
+            "Translate_Account_LogIn_RequestResendEmailConfirm": "Resend verification email",
+            "Translate_Affiliate_HaveNoCommission": "You have no commission, invite friends to get rewards.",
+            "EmailContent_EmailVerification": "Confirming your email will allow all future transaction notices to be sent to this email address. <br/> Please confirm your email address by clicking on the button:",
+            "Translate_Affiliate_ReferredUsers": "Referred Users",
+            "StatusGuide_Buy_Swap_Seller_Completed": "<li>The coins have been auto-swapped and the {tickerB} has been released to you.</li>",
+            "Translate_ViewTrade_DisputeTradeSuccess": "The disputed trade may be completed or cancelled after all information is reviewed. Please provide more details in the next step.",
+            "Translate_Affiliate_SendMailInviteSuccess": "Your invitation has been sent successfully to {0} friends.",
+            "Translate_Account_ForgotPassword_Introduce": "Enter your email address and we'll send you instructions on how to reset your password.",
+            "Translate_Common_CurrencyPair": "Currency pair",
+            "Translate_Footer_Connected": "Get connected",
+            "Translate_UIMessage_Withdrawal_Warning_LTC": "You are sending LTC in an address format that resembles a BTC and BCH Address. <br/> Please double check to make sure that your address is a <b>Litecoin</b> address.",
+            "Translate_Profile_ReferralMessage": "Your referral code: {0} or share this link with your friends {1}",
+            "Translate_DepositModel_Zil_Deposit_Warning": "This is mainnet ZIL address. <br/> DO NOT SEND ERC20 ZIL here as it will result in a permanent loss of your tokens.",
+            "TxStatus_Outgoing_WaitToConfirm": "Processing",
+            "Translate_Common_Cancel": "Cancel",
+            "Translate_ViewTrade_NoReceipt": "There is not receipt",
+            "UserNotificationLabel_MarkAllAsRead": "Mark All as Read",
+            "Translate_ManageProfile_ChangeEmail_ConfirmChangeEmail_Title": "Email Change Confirmation",
+            "Translate_Common_FeeAmount": "Fee amount",
+            "Translate_Common_AreYouSure": "Are you sure?",
+            "Translate_Submission_Submit_Success": "We have received your identity verification submission.<br/> Please allow us some time to process your submission.",
+            "ErrorCode_ErrorCannotDeleteAdvert": "Please complete all trades before deleting the advert.",
+            "Translate_Wallet_YourWallet": "Your Wallets",
+            "Translate_ErrorMessage": "Something went wrong...",
+            "Translate_Home_SellToBuyer": "Sell {0} {1} to these buyers",
+            "Translate_Affiliate_ReferralCode": "Referral Code",
+            "Translate_Affiliate_ReferralLink": "Referral Link",
+            "eUserNotificationEvent_LockedCoinForTrade": "Trade #{tradeId}: {amount} {ticker} has been locked.",
+            "Translate_Common_In": "In",
+            "Translate_Common_By": "By",
+            "StatusGuide_Sell_Seller_Completed": "<li>Your {tickerA} has been automatically released to the buyer.</li>",
+            "Translate_UIMessage_ResendVerificationEmail_ReachLimitResendEmailConfirm": "You have exceeded the daily limitation for the request. Please try again later.",
+            "EmailNote_EmailVerification": "If you did not perform this action, please contact us <a href='https://support.counter.network/hc/en-us/requests/new'>here</a>.",
+            "AdvertTradeStatus_MakingPayment": "Making Payment",
+            "Translate_Account_Register_QuestionReferral": "Do you a have referral code from your friend?",
+            "Translate_Footer_Guides": "Guides",
+            "EmailNote_TradeDisputeForBuyer": "Please complete the payment as soon as possible and contact a Counter Network Admin <a href='https://support.counter.network/hc/en-us/requests/new'>here</a> for further instructions.",
+            "Translate_UIMessage_ViewTrade_SuccessCompleted": "Your trade has been completed and your {0} has been sent to the buyer successfully.",
+            "Translate_ViewTrade_FeeIncluded": "Fee included",
+            "EmailSubject_EarningCommission": "Referral Commission",
+            "Translate_AboutUs_Introduction_Title": "Introduction",
+            "ErrorCode_ErrorDoNotHavePermission": "You do not have the permision to perform this action.",
+            "Translate_Profile_Tab2Fa_Note": "To enable 2FA via an app, please scan the QR code in an OTP app (e.g. Google Authenticator or Authy) and enter the six-digit token.",
+            "Translate_Common_Introduction": "Introduction",
+            "EmailContent_ResetPassword": "A request to change your password has been made. <br/> Click the button below to complete the process.",
+            "eUserNotificationEvent_Reward": "You have received a reward of {amount} {ticker}.",
+            "Translate_Submission_Rejected": "Your submission has been rejected because:",
+            "Translate_FreezeDescription_Withdrawal": "Locked for withdrawal",
+            "Translate_Wallet_TabTransactions_Type": "Type",
+            "Translate_NavBar_SignUp": "Sign up",
+            "eUserNotificationEvent_TradePaymentMade": "Trade #{tradeId}: Buyer has made payment for you.",
+            "Translate_Profile_TabPassword_NewPassword": "New password",
+            "Translate_NavBar_Adverts": "Adverts",
+            "Deposit_Agree_Term_14": "I will deposit Mainnet ZIL only.",
+            "Translate_Account_ConfirmForgotPassword_Title": "Reset Password",
+            "eUserNotificationEvent_TwoFaSetupSuccessfully": "You have enabled 2FA successfully.",
+            "Translate_ViewProfile_TabUserInformation_SellToUser": "Sell to {0}",
+            "ErrorCode_ErrorCannotModifyAdvert": "Cannot modify an advert that contains trade(s).",
+            "ErrorCode_ErrorUnauthorized": "Access Denied.",
+            "EmailSubject_EmailVerification": "Email Verification",
+            "Translate_Common_PlaceHolder_SelectACountry": "Select a country",
+            "EmailButtonLabel_TradeCompletedForSeller": "View now!",
+            "SuccessCode_SuccessRetrieved": "{0} has been successfully retrieved.",
+            "Translate_AboutUs_Team": "Team",
+            "TxType_Withdraw": "Withdraw",
+            "Translate_Account_ConfirmRegister_Title": "Email confirmation required",
+            "Translate_Footer_Careers": "Careers",
+            "Translate_Common_Amount": "Amount",
+            "Translate_Common_Active": "Active",
+            "Translate_Common_Action": "Action",
+            "Translate_Withdrawal_Email_Confirm_Required": "Email confirmation required",
+            "Translate_Account_ConfirmRegister_Message": "We have sent an email to <a href='#'>{0}</a>.<br/>Please check the email to verify your account.",
+            "Translate_Account_LogIn_Password": "Password",
+            "Translate_Common_PlaceHolder_DescribeYourExperience": "Describe your experience",
+            "StatusGuide_Sell_Buyer_MakingPayment": "<li>Seller's {tickerA} has been locked and the seller cannot cancel the trade now.</li>\n<li>Please make payment directly to the seller and mark Payment completed.</li>\n<li>Please do not cancel the trade if you have made payment to seller or you will lose your funds.</li>",
+            "AdvertTradeLogContent_Rejected": "<b>{0}</b> has rejected the offer.",
+            "Translate_Withdrawal_Cancel_Result_Success_Title": "Your {0} withdrawal has been successfully cancelled.",
+            "Translate_TxDescription_Deposit": "Received {0}",
+            "Translate_ViewAdvert_Confirmation_SwapMessage": "Your {0} will be locked if you open this trade. <br/> Do you want to continue?",
+            "Translate_Home_Intro2_Content_ReceiveMultipleOffersPerAdvert": "Receive multiple offers for your advert and choose the trader you wish to transact with.",
+            "Translate_NavBar_Wallet": "Wallets",
+            "Translate_ViewAdvert_Confirmation_TradeMessage": "Are you sure to open trade with {0}?",
+            "AdvertType_Buy": "Buy",
+            "Translate_UIMessage_ForgotPassword_ReachLimitRequestResetAccount": "You have exceeded the daily limitation for password reset. Please try again later.",
+            "Translate_ManageProfile_ChangeEmail_ConfirmChangeEmail_Success_Message": "Thank you for confirming your email change request. <br/> Another email has been sent to {0} to verify the ownership of the email address. <br/>Please check this email to verify your new email address.",
+            "Translate_Deposit_FullAddressLabel": "Wallet Address with Destination Tag",
+            "Translate_AboutUs_CommunitySecure_Title": "Secure",
+            "EmailContent_OfferRejected": "Your offer #{0} of {2} {1} was rejected.",
+            "ErrorCode_CreateAdvertMinMaxInvalid": "Your transaction limit is invalid. The minimum amount must be less than or equal to {0}",
+            "EmailSubject_TradeCompletedForBuyer": "Trade #{0} is completed",
+            "Translate_Common_Trades": "Trade",
+            "Translate_Affiliate_TabReferredUsers": "Referred users",
+            "TxType_Deposit": "Deposit",
+            "Translate_AboutUs_ImpactLives_Title": "Community-driven",
+            "EmailContent_TradeDisputeForSeller": "{0} has disputed the trade #{1} due to the delay in completing the trade from your side.",
+            "Translate_Home_Intro2_Content_AdvertiseFirstDepositLater": "No deposit is required to post an advertisement to trade your digital asset. Deposit is only required when you start a trade.",
+            "Translate_Affiliate_ReferralCodeInvalid": "The referral code is invalid.",
+            "Translate_Profile_IntroductionNote": "Shown on your public proﬁle. Plain text only (up to 200 characters).",
+            "Translate_Common_JoinedDate": "Joined Date",
+            "Translate_ViewAdvert_OpenTrade": "Open trade",
+            "StatusGuide_Sell_Buyer_Accepted": "<li>Seller's {tickerA} has been locked.</li>\n<li>To start making payment to seller, please select <b>I'm making payment</b> so that the seller cannot cancel the trade.</li>",
+            "Translate_NavBar_PostAdvert": "Post Ad",
+            "EmailSubject_InviteFriend": "Create a cryptocurency wallet!",
+            "ErrorCode_ErrorIncorrectEmail": "Invalid Email.",
+            "Translate_Affiliate_GuideOne": "1. Share referral code <br/>with your friends",
+            "Translate_Affiliate_GuideTwo": "2. Earn 22% of trading fees from your referred users",
+            "StatusGuide_Sell_Swap_Buyer_Pending": "<li>Please wait for the seller to complete the trade or you can cancel it.</li>\n<li>The coins will be auto-swapped after the trade is completed.</li>",
+            "Translate_Common_Verify": "Verify",
+            "Translate_Home_Intro2_Title": "The world’s most flexible trading marketplace",
+            "EmailContent_OfferAccepted": "Congratulations! Your offer #{0} of {2} {1} has been accepted.",
+            "EmailContent_NewOfferReceived": "You have received a new offer #{0} for one of your advertisements.",
+            "Translate_Common_2FaCode": "2FA Code",
+            "Translate_Account_ClickToSignIn": "Sign in",
+            "Translate_Common_PaymentMethod": "Payment method",
+            "Translate_UIMessage_ResetPassword_ResetPasswordCompleted": "Your password has been successfully reset.",
+            "Translate_DepositModel_CopyToClipboard": "Copy",
+            "StatusGuide_Buy_Seller_Disputing": "<li>Please provide more information to Counter Network Admins <a href=\"https://support.counter.network/hc/en-us/requests/new\">here</a>.</li>\n<li>After the dispute is resolved, your {tickerA} may be released to you or to the buyer.</li>",
+            "Translate_Footer_Contact": "Contact",
+            "Translate_Withdrawal_Verify_Result_Success_Title": "Withdraw {0}",
+            "Translate_Footer_Company": "Company",
+            "Translate_Footer_TermOfService": "Term of Service",
+            "EmailContent_OfferMakePayment": "{0} is making the payment for Trade #{3} of {2} {1}.<br/> You will not be able to cancel this trade and will be notified when {4} has completed payment.",
+            "Translate_Account_LogIn_QuestionDontHaveAccount": "Don't have an account?",
+            "Translate_Common_Status": "Status",
+            "Translate_Common_Submit": "Submit",
+            "StatusGuide_Sell_Buyer_Disputing": "<li>Please provide more information to Counter Network Admins <a href=\"https://support.counter.network/hc/en-us/requests/new\">here</a>.</li>\n<li>After the dispute is resolved, your {tickerA} may be released to you or to the buyer.</li>",
+            "StatusGuide_Sell_Buyer_Pending": "<li>Please wait for the seller to accept the trade or you can cancel it.</li>",
+            "Translate_Withdrawal_UpdatedDestinationTag": "{0} has been automatically updated. Please check again.",
+            "Translate_Common_Seller": "Seller",
+            "Translate_Common_Search": "Search",
+            "ErrorCode_ErrorInvalid": "Invalid {0}",
+            "eUserNotificationEvent_TradeMakingPayment": "Trade #{tradeId}: Buyer is making payment for you.",
+            "Translate_TxDescription_Debit": "Deducted {0} from Trade #{1}",
+            "Translate_PublishAdvert_ModifyAdvertisement": "Modify an advertisement",
+            "ErrorCode_Withdrawal_InvalidAddress": "Address {0} is invalid.",
+            "Translate_Account_RequestLockout": "Your account has been locked out upon your request. Please contact support to re-enable access <a href='https://support.counter.network/hc/en-us/requests/new'>here</a>.",
+            "Translate_Submission_SubmitPage_Rule4": "You do not use a camera ﬂash when taking the photograph and no reﬂection is visible.",
+            "Translate_Submission_SubmitPage_Rule1": "Maximum file size is <b>5MB</b>.",
+            "Translate_Submission_SubmitPage_Rule3": "All details on the ID document are clearly shown and can be read.",
+            "Translate_Submission_SubmitPage_Rule2": "Your image is in color and high resolution.",
+            "Translate_Common_Remove": "Remove",
+            "Translate_Common_Refesh": "Refresh",
+            "Translate_UIMessage_ViewTrade_DisputeOffer_Waning": "By opening a dispute, you will provide full chat messages to Counter Network Admins. The disputed trade may be completed or cancelled after all information is reviewed. Are you sure you want to dispute this trade?",
+            "Translate_Common_Rating": "Rating",
+            "Translate_ViewAdvert_YouSpend": "You spend",
+            "Translate_Common_Password": "Password",
+            "StatusGuide_Buy_Swap_Seller_Rejected": "<li>The trade has been rejected and the {tickerA} has been released back to you.</li>",
+            "eUserNotificationEvent_TwoFaRequestApproved": "Your 2FA has been disabled. Please re-enable 2FA as soon as possible.",
+            "EmailButtonLabel_EmailChangeConfirmation": "Confirm",
+            "EmailSubject_OfferMakePayment": "Trade #{0} Payment is being made",
+            "Translate_Home_Intro2_Title_MultipleAdvertsPerDigitalAsset": "Multiple Adverts per Digital Asset",
+            "Translate_Common_PlaceHolder_YourEmailAddress": "Your email address",
+            "Translate_Account_Register_Title": "Register",
+            "Translate_Submission_Approved": "Your identity has been approved. You can start trading now.",
+            "Translate_Affiliate_RequiredFriendEmails": "Please enter your friend's email to continue.",
+            "Translate_Withdrawal_Cancel_Result_Success_MainTitle": "Cancel {0} Withdrawal",
+            "AdvertTradeLogContent_Accepted": "<b>{0}</b> has accepted the trade.",
+            "Translate_Common_GoToWallet": "Go to wallet",
+            "Translate_Footer_FAQs": "FAQs",
+            "Translate_Common_Confirm": "Confirm",
+            "Translate_Common_Country": "Country",
+            "Crypto_Withdrawal_Note_156": "Memo is extra information unique to each ONE wallet. Leaving this out will lead to significant delays or failed transactions.",
+            "Crypto_Withdrawal_Note_154": "The minimum withdrawal amount is 0.1 ALGO.",
+            "Crypto_Withdrawal_Note_155": "The memo is extra information unique to each XLM wallet. Leaving this out will lead to significant delays or failed transactions.",
+            "Crypto_Withdrawal_Note_129": "Destination tag is extra information unique to each XRP wallet. Leaving this out will lead to significant delays or failed transactions.",
+            "Crypto_Withdrawal_Note_128": "Memo is extra information unique to each BNB wallet. Leaving this out will lead to significant delays or failed transactions.",
+            "Resource.PaymentType.AllOfflineOffers": "All offline offers",
+            "EmailButtonLabel_ResetPassword": "Reset password",
+            "Translate_Account_ResetPassword_Title": "Reset Password",
+            "StatusGuide_Buy_Buyer_MakingPayment": "<li>Seller's {tickerA} has been locked and the seller cannot cancel the trade now.</li>\n<li>Please make payment directly to the seller and mark <b>Payment Made</b>.</li>\n<li>Please do not cancel the trade if you have made payment to seller or you will lose your funds.</li>",
+            "Translate_Footer_Policy": "Privacy Policy",
+            "Translate_AdvertIndex_DeleteAdvertMessage": "Are you sure you want to delete this advert?",
+            "StatusGuide_Buy_Swap_Seller_Pending": "<li>Please wait for the buyer to complete the trade or you can cancel it.</li>\n<li>The coins will be auto-swapped after the trade is completed.</li>",
+            "Translate_Wallet_Warning_CancelWithdrawal": "Are you sure to cancel the withdrawal of {0} {1} to address {2}?",
+            "Translate_Affiliate_ProgramDetails_Terms_Three": "Commissions are only applied on completed trades. In the unlikely event of cancellation or reversal of completed trades, commissions will also be reversed.",
+            "Translate_Home_TitleLeft": "Buy and sell Stablecoins directly, locally or worldwide",
+            "Translate_AboutUs_Introduction_Message": "Counter Network is a peer-to-peer digital asset trading platform. Upholding the idea of “creating a distributed financial system for the world” as our mission, Counter Network is committed to providing a professional yet simplified platform for global users to make secure and swift peer-to-peer transactions. <br />  <br /> Founded in June 2018, Counter Network has services globally and is aiming to accelerate access to blockchain technology in the United States, Vietnam, India and Southeast Asia markets. Currently, Counter Network’s global users can trade more than 25 digital assets, including Bitcoin, Ether, Ripple, and Tether.",
+            "Translate_Common_GoToMarket": "Go to Market",
+            "Translate_Withdrawal_Dt_Warning_Title": "Please enter the {0}.",
+            "EmailContent_TradeDisputeForBuyer": "{0} has created a dispute to trade #{1} of {3} {2} due to the delay in payment from your side.",
+            "Translate_NavBar_OffersAndTrades": "Offers & Trades",
+            "Translate_TxDescription_Credit": "Credited {0} from Trade #{1}",
+            "Translate_AboutUs_ForwardThinking_Message": "Counter Network's infrastructure is built to support a plethora of cryptocurrencies, to be your one stop to everything.",
+            "StatusGuide_Sell_Seller_Accepted": "<li>Your {tickerA} has been locked.</li>\n<li>Please wait for the buyer to make payment, or you can cancel the trade and the {tickerA} will be released back to you.</li>",
+            "Translate_DepositModel_WalletAddress": "Wallet Address",
+            "AdvertTradeLogContent_Cancelled": "<b>{0}</b> has cancelled the trade.",
+            "Resource.PaymentType.AllOffers": "All Offers",
+            "Translate_Trade_Information": "Trade Information",
+            "EmailNote_FooterNote": "For any further enquiries, please do not hesitate to contact our support team <a href='https://support.counter.network/hc/en-us/requests/new'>here</a> or at hello@counter.network",
+            "Translate_Common_DestinationTag": "Destination tag",
+            "Translate_Affiliate_ProgramDetails_Terms_Two": "Counter Network reserves the right to revoke all past commissions paid out if the referrer violates any of these terms.",
+            "Translate_Affiliate_ProgramDetails_Terms_One": "There is no limit on the number of referred users. However, we will disqualify any user and revoke referral commissions due to duplicate/fake accounts or any violation of the referral program.",
+            "ErrorCode_ErrorProcessRequest": "An error occurred while processing your request.",
+            "ErrorCode_ErrorBlocked": "You cannot open trade with a blocked user or a user who has blocked you.",
+            "Translate_Trade_Spending": "You spend",
+            "Translate_PublishAdvert_PublishButton": "Publish advertisement",
+            "Translate_Profile_Tab2Fa_2FaEnabledMessage": "Two-factor authentication (2FA) adds an extra layer of security to your account. <br/> To log in, you will need your email address, password and a 2FA code.",
+            "Translate_NavBar_LogIn": "Log in",
+            "StatusGuide_Buy_Buyer_Completed": "<li>The trade has been completed and {tickerA} has been released to you.</li>",
+            "AdvertTradeLogContent_Disputing": "<b>{0}</b> has created a dispute.",
+            "Translate_CaptCha_Invalid": "Captcha is not validated.",
+            "Translate_AdvertIndex_CannotModifyAdvert": "Cannot modify an advert that contains trade(s).",
+            "StatusGuide_Sell_Swap_Seller_Pending": "<li>You can complete the trade after reviewing all trade information or you can reject it.</li>\n<li>The coins will be auto-swapped after the trade is completed.</li>",
+            "Translate_NavBar_Trust": "Trusts",
+            "Translate_Account_ConfirmResetPassword_Message": "Your password has been reset.",
+            "Translate_Home_Intro1_Content_RealTimeChat": "Chat with the trader you are transacting with in real time without having to disclose your contact number.",
+            "Translate_UIMessage_ViewAdvert_UnVerifyAccount_Warning": "This account has not been verified. Are you sure you want to continue this trade?",
+            "EmailSubject_NewDepositDetected": "Incoming {0} deposit",
+            "Translate_Profile_VerifyNumber": "Verify Phone Number"
+        };
+    </script>
+    <script type="4be02b1a5a84db4355af6332-text/javascript">
+        var appInsights = window.appInsights || function (a) {
+            function b(a) {
+                c[a] = function () {
+                    var b = arguments;
+                    c.queue.push(function () {
+                        c[a].apply(c, b)
+                    })
+                }
+            }
+            var c = {
+                    config: a
+                },
+                d = document,
+                e = window;
+            setTimeout(function () {
+                var b = d.createElement("script");
+                b.src = a.url || "https://az416426.vo.msecnd.net/scripts/a/ai.0.js", d.getElementsByTagName(
+                    "script")[0].parentNode.appendChild(b)
+            });
+            try {
+                c.cookie = d.cookie
+            } catch (a) {}
+            c.queue = [];
+            for (var f = ["Event", "Exception", "Metric", "PageView", "Trace", "Dependency"]; f.length;) b("track" +
+                f.pop());
+            if (b("setAuthenticatedUserContext"), b("clearAuthenticatedUserContext"), b("startTrackEvent"), b(
+                    "stopTrackEvent"), b("startTrackPage"), b("stopTrackPage"), b("flush"), !a
+                .disableExceptionTracking) {
+                f = "onerror", b("_" + f);
+                var g = e[f];
+                e[f] = function (a, b, d, e, h) {
+                    var i = g && g(a, b, d, e, h);
+                    return !0 !== i && c["_" + f](a, b, d, e, h), i
+                }
+            }
+            return c
+        }({
+            instrumentationKey: '5acd7bee-d948-4863-8272-db19b18af019'
+        });
+        window.appInsights = appInsights, appInsights.queue && 0 === appInsights.queue.length && appInsights
+            .trackPageView();
+    </script>
+    <script async src="//www.googletagmanager.com/gtag/js?id=UA-132425187-1"
+        type="4be02b1a5a84db4355af6332-text/javascript"></script>
+    <script type="4be02b1a5a84db4355af6332-text/javascript">
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'UA-132425187-1');
+    </script>
+    <script src="/dist/counter.js.gz?v=E7CVHbXuwaToTjA_j0hmkX261jZz-fK7T45MlUX-TEA"
+        type="4be02b1a5a84db4355af6332-text/javascript"></script>
+
+<body>
+    <div id=counter-network-app>
+        <div id=header>
+            <div class=landing style=background-image:url(/images/cn-bg.svg)> <nav
+                class="navbar is-transparent main-nav" role=navigation aria-label="main navigation">
+                <div class=container>
+                    <div class=navbar-brand><a class=navbar-item href="/"> <img class="logo is-hidden-mobile"
+                                style=width:300px;height:auto src=/images/counternetwork-logo-white.svg> <img
+                                class="logo is-hidden-tablet" style=height:auto src=/images/nav-logo.png> </a> <div
+                                class="navbar-item has-button mobile-buttons">
+                            <div class=buttons><a class="button is-white is-outlined" href=/account/login> Log in </a>
+                                    </div> </div> <a role=button class="navbar-burger burger" id=nav-toggle
+                                    aria-label=menu aria-expanded=false data-target=navbarCounterNetwork> <span
+                                        aria-hidden=true></span> <span aria-hidden=true></span> <span
+                                        aria-hidden=true></span> </a></div>
+                            <div id=navbarCounterNetwork class=navbar-menu>
+                                <div class=navbar-end>
+                                    <div class=navbar-item><a class="navbar-link is-arrowless" href=/affiliate-program>
+                                            Referral </a> </div> <div class=navbar-item><a
+                                                class="navbar-link is-arrowless" href=/adverts/publish-advertisement>
+                                                Post Ad</a> </div> <div class="navbar-item has-dropdown is-hoverable"><a
+                                                    class="navbar-link is-arrowless" href=javascript:> <span class=icon
+                                                        style=display:contents> <i
+                                                            class="fa counter-icon-flag-en-US"></i>&nbsp; <span>English
+                                                        </span> </span> </a>
+                                                <div class=navbar-dropdown><a class="navbar-item language-item"
+                                                        href="/Home/ChangeLanguage?returnUrl=~%2F&amp;culture=en-US">
+                                                        <span class="icon has-text-info"> <i
+                                                                class="fa counter-icon-flag-en-US" aria-hidden=true></i>
+                                                        </span> <span>English (United States) </span> </a> <a
+                                                        class="navbar-item language-item"
+                                                        href="/Home/ChangeLanguage?returnUrl=~%2F&amp;culture=vi-VN">
+                                                        <span class="icon has-text-info"> <i
+                                                                class="fa counter-icon-flag-vi-VN" aria-hidden=true></i>
+                                                        </span> <span>Ti&#x1EBF;ng Vi&#x1EC7;t (Vi&#x1EC7;t Nam) </span>
+                                                    </a></div>
+                                    </div>
+                                    <div class="navbar-item has-button">
+                                        <div class=buttons><a class="button is-white is-outlined" href=/account/login>
+                                                Log in </a> <a class="button is-primary" href=/account/register>
+                                                <strong>Register now</strong> </a></div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                    </nav>
+                    <div class=container>
+                        <div class=main-landing-wrapper>
+                            <div class=main-landing>
+                                <div class=hero>
+                                    <div class=hero-body>
+                                        <div class=columns>
+                                            <div class="column is-10 is-offset-1">
+                                                <section class="hero landing-left">
+                                                    <div>
+                                                        <div>
+                                                            <h1 class="title has-text-centered has-text-weight-bold">
+                                                                <div><span class=no-wrap> Buy &amp; Sell Stablecoins
+                                                                    </span></div>
+                                                                <div><span class=no-wrap>from people</span> <span
+                                                                        class=no-wrap>near you</span></div>
+                                                            </h1>
+                                                            <h2 class=subtitle></h2>
+                                                        </div>
+                                                    </div>
+                                                </section>
+                                            </div>
+                                        </div>
+                                        <div class=columns>
+                                            <div
+                                                class="column is-6-fullhd is-6-desktop is-6-tablet is-offset-3-fullhd is-offset-3-desktop is-offset-3-tablet">
+                                                <div class=get-started-transparent>
+                                                    <get-started-section v-bind:button-label="'Register now'"
+                                                        v-bind:email-placeholder="'Your email address'"
+                                                        v-bind:keep-first=true></get-started-section>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class=columns>
+                                    <div
+                                        class="column is-6-fullhd is-8-desktop is-8-tablet is-offset-3-fullhd is-offset-2-desktop is-offset-2-tablet">
+                                        <div>
+                                            <div>
+                                                <section class=hero>
+                                                    <div class=hero-body>
+                                                        <div class="box pricing-box">
+                                                            <landing-pricing-box v-bind:buy-button-label="'Buy now'"
+                                                                v-bind:sell-button-label="'Sell now'"
+                                                                v-bind:place-holder="'Select Crypto'">
+                                                            </landing-pricing-box>
+                                                        </div>
+                                                    </div>
+                                                </section>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id=body>
+                <div id=trade-intro-section class=has-background-white>
+                    <div class=columns>
+                        <div class="column is-6">
+                            <div class=why-counter-section style=display:flex;justify-content:flex-end>
+                                <div style=max-width:713px>
+                                    <article class=media>
+                                        <figure class=media-left>
+                                            <p class="image is-48x48" style=display:flex;justify-content:center><img
+                                                    src=/icons/lock-color.svg style=width:35px>
+                                        </figure>
+                                        <div class=media-content>
+                                            <div class=content>
+                                                <p><strong class=title>Secure</strong> <br> Counter Network adopts
+                                                    industry best practices to secure your funds. Majority of funds are
+                                                    held offline in vaults with 24/7 security.
+                                            </div>
+                                        </div>
+                                    </article>
+                                    <article class=media>
+                                        <figure class=media-left>
+                                            <p class="image is-48x48" style=display:flex;justify-content:center><img
+                                                    src=/icons/friends-color.svg style=width:48px>
+                                        </figure>
+                                        <div class=media-content>
+                                            <div class=content>
+                                                <p><strong class=title>Community Friendly</strong> <br> We strive to
+                                                    build a community of trustworthy and reliable traders around you.
+                                                    Our experienced operations team is here to shape the community and
+                                                    handle disputes fairly.
+                                            </div>
+                                        </div>
+                                    </article>
+                                    <article class=media>
+                                        <figure class=media-left>
+                                            <p class="image is-48x48"><img src=/icons/swap-color.svg> </figure> <div
+                                                    class=media-content>
+                                                <div class=content>
+                                                    <p><strong class=title>Multi Asset Support</strong> <br> Many
+                                                        digital assets are hard to purchase with your local currency. We
+                                                        constantly evaluate and add new digital assets to our platform.
+                                                </div>
+                                </div>
+                                </article>
+                                <article class=media>
+                                    <figure class=media-left>
+                                        <p class="image is-48x48"><img src=/icons/chat2.svg> </figure> <div
+                                                class=media-content>
+                                            <div class=content>
+                                                <p><strong class=title>Real&#x2010;time Chat</strong> <br> Chat with the
+                                                    trader you are transacting with in real time without having to
+                                                    disclose your contact number.
+                                            </div>
+                            </div>
+                            </article>
+                            <div style="margin:50px 0;display:flex;justify-content:center"><a
+                                    class="button is-primary is-medium" href=/account/register>Register now&nbsp;<i
+                                    class="fa fa-angle-right"></i></a></div>
+                        </div>
+                    </div>
+                </div>
+                <div id=video-section class="column is-5 is-offset-1">
+                    <video-player-modal></video-player-modal>
+                </div>
+            </div>
+        </div>
+        <script type="4be02b1a5a84db4355af6332-text/javascript">
+            var videoSectionVm = new Vue({
+                el: "#video-section",
+            });
+        </script>
+        <div id=intro2 style="background:#f8f8f9;padding:100px 0">
+            <div class=container>
+                <div class=has-text-centered>
+                    <h1 class=intro-heading>The world&#x2019;s most flexible trading marketplace</h1>
+                </div>
+                <div class=columns>
+                    <div class="column is-5">
+                        <div class=box style=background-color:#1B137E;color:#fff>
+                            <div>
+                                <div style="display:flex;flex-direction:column;padding:15px 0"><img src=/icons/quote.svg
+                                        style=height:49px></div>
+                                <div class=has-text-centered>
+                                    <div style=font-weight:bold;font-size:1.4em>"Counter Network is one of the
+                                        world&#x2019;s first widely-available peer-to-peer cryptocurrency exchange."
+                                    </div>
+                                    <div class="m-t-30 has-text-weight-bold">Yusho Liu</div>
+                                    <div style=font-size:0.8em;color:#948b8b>
+                                        <div>CEO of Coinhako, Singapore's largest</div>
+                                        <div>cryptocurrency exchange</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column is-6 is-offset-1">
+                        <article class=media>
+                            <div class=media-content>
+                                <div class=content>
+                                    <p><strong class=title>Advertise First, Deposit Later</strong> <br> No deposit is
+                                        required to post an advertisement to trade your digital asset. Deposit is only
+                                        required when you start a trade.
+                                </div>
+                            </div>
+                        </article>
+                        <article class=media>
+                            <div class=media-content>
+                                <div class=content>
+                                    <p><strong class=title>Receive Multiple Offers per Advert</strong> <br> Receive
+                                        multiple offers for your advert and choose the trader you wish to transact with.
+                                </div>
+                            </div>
+                        </article>
+                        <article class=media>
+                            <div class=media-content>
+                                <div class=content>
+                                    <p><strong class=title>Adverts Run Forever</strong> <br> Adverts will continue to
+                                        run until you close it, even when trades are completed. Spend less time creating
+                                        adverts.
+                                </div>
+                            </div>
+                        </article>
+                        <article class=media>
+                            <div class=media-content>
+                                <div class=content>
+                                    <p><strong class=title>Multiple Adverts per Digital Asset</strong> <br> Post adverts
+                                        with different margins, payment methods or any term you name!
+                                </div>
+                            </div>
+                        </article>
+                        <div style="margin:50px 0;display:flex;justify-content:start"><a
+                                class="button is-primary is-medium" href=/account/register>Register now&nbsp;<i
+                                class="fa fa-angle-right"></i></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id=home-get-started-section>
+            <div class=container>
+                <section class="hero is-medium">
+                    <div class=hero-body>
+                        <div>
+                            <div class=columns>
+                                <div
+                                    class="column is-8-fullhd is-8-desktop is-8-tablet is-offset-2-fullhd is-offset-2-desktop is-offset-2-tablet">
+                                    <h1 class="title has-text-centered has-text-white m-b-50">Join the most secure
+                                        peer-to-peer exchange now!</h1>
+                                </div>
+                            </div>
+                            <div class=columns>
+                                <div
+                                    class="column is-6-fullhd is-6-desktop is-6-tablet is-offset-3-fullhd is-offset-3-desktop is-offset-3-tablet">
+                                    <div class=get-started-transparent>
+                                        <get-started-section v-bind:button-label="'Register now'"
+                                            v-bind:email-placeholder="'Your email address'"></get-started-section>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <script type="4be02b1a5a84db4355af6332-text/javascript">
+            var homeSetStartedSectionVm = new Vue({
+                el: "#home-get-started-section",
+            });
+        </script>
+    </div>
+    <div id=footer>
+        <footer class="footer footer-padding">
+            <div class=container>
+                <div class=content>
+                    <div class=columns>
+                        <div class="column is-one-third">
+                            <p class=field style=height:80%;padding-bottom:20px;padding-top:20px><img width=250
+                                    src=/images/counternetwork-logo-full-black.png> <p class=field
+                                    style=margin-top:auto>&copy; 2017-2019 Counter Network. <span class=no-wrap>All
+                                    rights reserved.</span>
+                        </div>
+                        <div class=column>
+                            <p class=field style=padding-bottom:20px;padding-top:20px><strong> Company</strong>
+                                <p class=field><a href=/home/about> About us </a> <p class=field><a
+                                            href=//cryptojobslist.com/blockchain-companies/counter-network
+                                            target=_blank> Careers </a>
+                        </div>
+                        <div class=column>
+                            <p class=field style=padding-bottom:20px;padding-top:20px><strong> Support</strong>
+                                <p class=field><a href=//support.counter.network/hc/en-us/categories/360001325131-FAQs
+                                        target=_blank> FAQs </a>
+                                    <p class=field><a
+                                            href=//support.counter.network/hc/en-us/categories/360001325051-Guides
+                                            target=_blank> Guides </a>
+                                        <p class=field><a href=//support.counter.network/hc/en-us/requests/new
+                                                target=_blank> Contact </a>
+                        </div>
+                        <div class=column>
+                            <p class=field style=padding-bottom:20px;padding-top:20px><strong> Term of Service</strong>
+                                <p class=field><a href=/home/privacy> Privacy Policy </a> </div> <div class=column>
+                                        <p class=field style=padding-bottom:20px;padding-top:20px><strong> Get
+                                                connected</strong>
+                                            <p class=field><span class="icon fa-lg has-text-info has-text-grey"> <i
+                                                        class="fa fa-facebook"></i> </span> <span
+                                                    class="icon fa-lg has-text-info has-text-grey"> <i
+                                                        class="fa fa-instagram"></i> </span> <span
+                                                    class="icon fa-lg has-text-info has-text-grey"> <a target=_blank
+                                                        href=//twitter.com/Counter_Network> <i
+                                                        class="fa fa-twitter"></i></a> </span> <span
+                                                    class="icon fa-lg has-text-info has-text-grey"> <a target=_blank
+                                                        href=//t.me/counternetwork> <i class="fa fa-telegram"></i></a>
+                                                </span> <span class="icon fa-lg has-text-info has-text-grey"> <a
+                                                        target=_blank href=//medium.com/counter-network> <i
+                                                        class="fa fa-medium"></i></a> </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <div id=cookieConsent>
+            <div class="cc-window cc-banner cc-type-info cc-theme-block cc-bottom cc-color-override-1804993606"><span
+                    class=cc-message> By using our site, you acknowledge that you have read and understand our <a
+                        href=/home/privacy>Cookie Policy, Privacy Policy, and our Terms of Service</a>. <a
+                        href=javascript: onclick="if (!window.__cfRLUnblockHandlers) return false; closeCookieConsent()"
+                        style=height:38px;display:inline-block;width:50px;text-align:center
+                        data-cf-modified-4be02b1a5a84db4355af6332-=""><i class="fa fa-times"></i></a> </span></div>
+        </div>
+        <script type="4be02b1a5a84db4355af6332-text/javascript">
+            function closeCookieConsent() {
+                document.cookie = "TurnOffCookieConsent=true;path=/";
+                document.querySelector('#cookieConsent').style.display = 'none';
+            }
+        </script>
+    </div>
+    </div>
+    <style>
+        #ticker-navbar .modal-background {
+            background-color: rgba(32, 30, 98, 0.88) !important
+        }
+
+        .currency-icon {
+            display: inline-flex
+        }
+
+        .currency-icon .currency-name {
+            padding-left: 4px
+        }
+
+        .slide-show {
+            transform: translate3d(0, 0, 0)
+        }
+
+        .slide {
+            animation: moveSlideshow 40s linear infinite;
+            transform: translate3d(0, 0, 0)
+        }
+
+        .table-trans {
+            background-color: transparent
+        }
+
+        #ticker-navbar input {
+            min-height: 36px !important
+        }
+
+        #ticker-price-table table {
+            background-color: transparent !important
+        }
+
+        #ticker-price-table td,
+        #ticker-price-table th {
+            border: 1px solid rgba(219, 219, 219, 0.41);
+            border-width: 0 0 1px;
+            padding: 0.5em 0.75em
+        }
+
+        #ticker-price-table tr,
+        #ticker-price-table th {
+            height: 2rem !important;
+            color: white
+        }
+
+        #ticker-price-table tr td {
+            vertical-align: middle !important
+        }
+
+        #ticker-price-table tr:hover {
+            color: green
+        }
+
+        #ticker-navbar label {
+            color: white
+        }
+
+        .view-more-btn {
+            border: #fff;
+            color: #fff !important;
+            min-height: 30px !important
+        }
+
+        #ticker-modal .modal-content::-webkit-scrollbar {
+            width: 1em
+        }
+
+        #ticker-modal .modal-content::-webkit-scrollbar-thumb {
+            background-color: rgba(32, 30, 98, 0.88);
+            outline: 1px solid slategrey
+        }
+
+        @keyframes moveSlideshow {
+            0% {
+                transform: translate(0, 0)
+            }
+
+            100% {
+                transform: translateX(-66.6666%)
+            }
+        }
+    </style>
+    <script src="/lib/aspnet/signalr/dist/browser/signalr.min.js?v=2q-WZefmeSQ-GK2hUg0O51LUMb5GVMQYCLapBNme6oU"
+        type="4be02b1a5a84db4355af6332-text/javascript"></script>
+    <div id=ticker-navbar class=is-hidden-mobile>
+        <nav v-if=isLoaded class="navbar is-fixed-bottom" style=background-color:white!important>
+            <div class="navbar-menu slide-show">
+                <div class=navbar-start style=z-index:1;background-color:#413EEE>
+                    <div class=navbar-item><button class="button is-primary is-outlined view-more-btn"
+                            @click=opendModal>More</button></div>
+                </div>
+                <div class="navbar-end slide">
+                    <div class=navbar-item v-for="item in tickerPrice">
+                        <div class=columns>
+                            <div class=column><span class=currency-icon>
+                                    <b-icon :icon=item.baseCurrency.toLowerCase()></b-icon> <span
+                                        class="currency-name has-text-weight-bold" v-cloak>
+                                        {{item.baseCurrency}}</span>&nbsp; <span
+                                        class="has-text-success has-text-weight-bold no-wrap"
+                                        v-cloak>{{item.counterCurrency}} {{item.bid }}</span>
+                                </span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <b-modal id=ticker-modal :active.sync=isImageModalActive>
+            <div class="is-transparent section">
+                <div class=columns>
+                    <div class="column is-4">
+                        <field-autocomplete title="Fiat currency" v-model=fiatId :selected-value=fiatId
+                            :options=fiatList label-key=name value-key=id :horizontal=false> </field-autocomplete>
+                    </div>
+                    <div class="column is-offset-4">
+                        <field-autocomplete title=Cryptocurrency v-model=cryptoId :selected-value=cryptoId
+                            :options=cryptoList label-key=name value-key=id :horizontal=false> </field-autocomplete>
+                    </div>
+                </div>
+                <b-table :data=tickerPriceOnTable class=is-fullheight id=ticker-price-table hoverable=true><template
+                        slot-scope=props cl>
+                        <b-table-column field="" label=Cryptocurrency v-cloak> <span class=currency-icon>
+                                <b-icon :icon=props.row.baseCurrency.toLowerCase()></b-icon> <span
+                                    class="currency-name has-text-weight-bold">{{props.row.baseCurrency}} </span>
+                            </span> </b-table-column>
+                        <b-table-column field="" label="Buy Price" v-cloak width=320> {{fiatTicker}}
+                            {{getPriceValue(props.row.bid)}} </b-table-column>
+                        <b-table-column field="" label="Sell Price" v-cloak width=320> {{fiatTicker}}
+                            {{getPriceValue(props.row.ask)}} </b-table-column>
+                    </template></b-table>
+            </div>
+        </b-modal>
+    </div>
+    <script type="4be02b1a5a84db4355af6332-text/javascript">
+        var tickerNavBar = new Vue({
+            el: "#ticker-navbar",
+            data: {
+                tickerPrice: [],
+                tickerPriceOnTable: [],
+                rateExchange: [],
+                fiatList: [],
+                cryptoList: [],
+                fiatId: 0,
+                cryptoId: 0,
+                isLoaded: false,
+                isImageModalActive: false,
+                rate: 1,
+                fiatTicker: "USD",
+            },
+            watch: {
+                'fiatId': function (val, oldVal) {
+                    if (val) {
+                        const from = this.rateExchange.filter((x) => {
+                            return x.currency === this.fiatTicker
+                        })[0];
+                        const to = this.rateExchange.filter((x) => {
+                            return x.currency === val
+                        })[0];
+                        const rate = to.rate / from.rate;
+                        this.rate = rate;
+                        this.fiatTicker = to.currency;
+                    } else {
+                        this.rate = 1;
+                        this.fiatTicker = "USD";
+                    }
+                },
+                'cryptoId': function (val, oldVal) {
+                    this.filterTickerDataForTable();
+                },
+                'tickerPrice': function (val) {
+                    this.filterTickerDataForTable();
+                }
+            },
+            methods: {
+                opendModal() {
+                    this.fiatId = 0;
+                    this.cryptoId = 0;
+                    this.isImageModalActive = true;
+                },
+                filterTickerDataForTable() {
+                    if (this.cryptoId) {
+                        const data = this.tickerPrice.filter((x) => {
+                            if (x.crypto == this.cryptoId) {
+                                return x;
+                            }
+                        });
+                        this.tickerPriceOnTable = data;
+                    } else {
+                        this.tickerPriceOnTable = this.tickerPrice;
+                    }
+                },
+                getPriceValue(price) {
+                    let priceWithRate = price * this.rate;
+                    let des = this.getDecimals(priceWithRate);
+                    let formated = this.formatMoney(priceWithRate, des);
+                    return formated;
+                },
+                getDecimals(input) {
+                    let splits = input.toString().split(".");
+                    let defaultDecs = input > 1 ? 2 : 5;
+                    let decs = defaultDecs;
+                    if (splits.length === 2) {
+                        if (splits[1].length > defaultDecs) {
+                            decs = defaultDecs;
+                        } else {
+                            decs = splits[1].length;
+                        }
+                    } else if (splits.length === 1) {
+                        decs = 2;
+                    }
+                    return decs;
+                },
+                formatMoney(n, c, d, t) {
+                    var c = isNaN(c = Math.abs(c)) ? 2 : c,
+                        d = d == undefined ? "." : d,
+                        t = t == undefined ? "," : t,
+                        s = n < 0 ? "-" : "",
+                        i = String(parseInt(n = Math.abs(Number(n) || 0).toFixed(c))),
+                        j = (j = i.length) > 3 ? j % 3 : 0;
+                    return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) +
+                        (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
+                }
+            },
+            created: function () {
+                this.connection = new signalR.HubConnectionBuilder().withUrl("/marketPriceHub")
+                    .configureLogging(signalR.LogLevel.Information).build();
+            },
+            mounted: function () {
+                var thisVue = this;
+                thisVue.connection.start().catch(function (err) {
+                    return console.error(err.toSting());
+                }).then(function () {
+                    thisVue.connection.invoke("FetchCurrentMarketPrice").catch(function (err) {
+                        return console.error(err.toSting());
+                    }).then(function () {});
+                });
+                thisVue.connection.on("Latest", function (data) {
+                    thisVue.tickerPrice.splice(0, thisVue.tickerPrice.length);
+                    for (let i = 0; i < data.priceResults.length; i++) {
+                        thisVue.tickerPrice.push(data.priceResults[i]);
+                    }
+                    if (!thisVue.cryptoList || thisVue.cryptoList.length === 0) {
+                        const cryptoList = data.priceResults.map((x) => {
+                            return {
+                                id: x.baseCurrency,
+                                name: x.baseCurrency,
+                            }
+                        });
+                        thisVue.cryptoList = cryptoList;
+                    }
+                    thisVue.rateExchange = data.fixerRates;
+                    if (!thisVue.fiatList || thisVue.fiatList.length === 0) {
+                        const fiatList = data.fixerRates.map((x) => {
+                            return {
+                                id: x.currency,
+                                name: x.currency,
+                            }
+                        });
+                        thisVue.fiatList = fiatList;
+                    }
+                    thisVue.isLoaded = true;
+                });
+            },
+        });
+    </script>
+    <script type="4be02b1a5a84db4355af6332-text/javascript">
+        const temp = '';
+        if (temp.length > 0) {
+            const toastModel = JSON.parse(temp);
+            if (toastModel !== null) {
+                console.log(toastModel);
+                window.popUp.toast(toastModel);
+            }
+        }
+        window.popUp.defaultTitle.error = "Error";
+        window.popUp.defaultTitle.warning = "Warning";
+        window.popUp.defaultTitle.success = "Successful";
+        var indexvm = new Vue({
+            el: "#header",
+            data() {
+                return {}
+            },
+            computed: {},
+            watch: {},
+            beforeMount: function () {
+                console.log('before mount');
+                const currentLanguage = 'en-US';
+                if (currentLanguage == "vi-VN") {
+                    window.moment.locale('vi');
+                } else {
+                    window.moment.locale('en');
+                }
+            },
+            mounted: function () {
+                console.log('after mount');
+            },
+            methods: {}
+        });
+    </script>
+    <script src="https://ajax.cloudflare.com/cdn-cgi/scripts/95c75768/cloudflare-static/rocket-loader.min.js"
+        data-cf-settings="4be02b1a5a84db4355af6332-|49" defer=""></script>
