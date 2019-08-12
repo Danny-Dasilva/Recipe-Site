@@ -1,0 +1,108 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
+ 
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+
+</head>
+<body>
+
+
+<!-- Add Ingredient:
+<input type="text" id="firstname">
+<br>
+<p>Current Ingredients</p>
+<ol id="demo"></ol>
+<input type='button' onclick='changeText2()' value='Add' />
+<input type="submit" value="Submit" id='submit'>
+ -->
+
+
+
+
+<form action="" method="post" name="adminForm" class="form-inline">
+<div id="tagsForm" class="sortable">
+  
+<div class="columns"  id="item4">
+ <div class="column is-one-third">
+<textarea class="textarea item" placeholder="e.g. Hello world" id="value1"></textarea>
+  </div>
+  <div class="column">
+   <button class="button is-danger" type="button" onclick="removeDiv('item4')"><span class="fa fa-trash"></span></button>
+    
+  <a class="button is-light"><i class="fas fa-arrows-alt"></i> </a>
+     </div>
+ </div>
+</div>
+
+<button id="add">Add</button>
+<button id="test">Test values</button>
+
+</form>
+     
+
+
+
+
+<script>
+
+
+
+$( "#tagsForm" ).sortable({connectWith: ".sortable"});
+
+$('#add').click(function(){
+  let amount = getValues().length + 1;
+  $('#tagsForm')[0].innerHTML = $('#tagsForm')[0].innerHTML + `<div class="columns" id="item${amount}"><div class="column is-one-third"><textarea class="textarea item" placeholder="e.g. Hello world" id="value${amount}"></textarea></div><div class="column"> <button class="button is-danger" type="button" onclick="removeDiv('item${amount}')"><span class="fa fa-trash"></span></button> <a class="button is-light"><i class="fas fa-arrows-alt"></i> </a></div></div>`;
+  console.log($('#tagsForm')[0]);
+})
+
+function removeDiv(id){
+  $(`#${id}`).remove();
+}
+
+function getValues(){
+  let valueArr = [];
+  for(let elem of document.getElementsByClassName('item')){
+    valueArr.push(elem.value);
+  }
+  console.log(valueArr);
+  return valueArr;
+}
+
+$('#test').click(function(){
+  getValues();
+})
+
+$('#submit').click(function() {
+    ingredients.push($('#demo').val());
+        console.log("functrional")
+        console.log(ingredients);
+        $.ajax({
+          type: "POST",
+          contentType: "application/json;charset=utf-8",
+          url: "/your/flask/endpoint",
+          traditional: "true",
+          data: JSON.stringify({ingredients}),
+          dataType: "json"
+          });
+    });
+
+
+
+</script>
+
+    
+</body>
+</html>

@@ -1,0 +1,148 @@
+
+
+<!DOCTYPE html>
+<html>  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hello Bulma!</title>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+ <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
+ 
+<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    
+  </head>
+  <nav class="navbar is-fixed-top">
+      <div class="container is-small">
+        <div class="navbar-brand"><a class="navbar-item" href="/"><img src="/logos/ftw/ftw_mark_white.png"
+              alt="FTW logo"><span class="is-size-7 has-text-weight-light">&nbsp;&nbsp;TestNet</span></a>
+          <div role="button" tabindex="0" class="navbar-burger burger"><span></span><span></span><span></span></div>
+        </div>
+        <div class="navbar-menu">
+          <div class="navbar-end"><a class="navbar-item" href="/solutions/lottery">Lottery</a><a class="navbar-item"
+              href="/solutions/raffle">Raffle</a><a class="navbar-item" href="/ecosystem">Ecosystem</a><a
+              rel="noopener noreferrer" target="_blank" href="https://medium.com/ftw-blog" class="navbar-item">Blog</a><a
+              class="navbar-item">Sign in</a></div>
+        </div>
+      </div>
+    </nav>
+<div class="container">
+    Add Ingredient:
+<input type="text" id="firstname">
+<br>
+<p>Current Ingredients</p>
+<ol id="demo"></ol>
+<input type='button' onclick='changeText2()' value='Add' />
+
+
+
+<button id="test">Test values</button>
+
+<form action="" method="post" name="adminForm" class="form-inline">
+<div id="tagsForm" class="sortable">
+
+<div class="columns"  id="item42">
+<div class="column is-one-third">
+<textarea class="textarea item" placeholder="e.g. Hello world" id="value42"></textarea>
+</div>
+<div class="column">
+    <a class="button is-light"><i class="fas fa-arrows-alt"></i> </a>
+    <a class="button is-primary A"  id="add" ><i class="fas fa-plus" style="font-size:1.4em !important"></i> </a>
+  <button class="button is-danger" type="button" onclick="removeDiv('item42')"><span
+      class="fa fa-trash"></span></button>
+      
+ </div>
+ 
+</div>
+
+
+</div>
+</div>
+
+
+<script>
+  $("#tagsForm").sortable({ connectWith: ".sortable" });
+
+  $(document).on('click', '.A', function(){ 
+
+    let amount = getValues().length + 1;
+    $('#tagsForm').innerHTML = $('#tagsForm').append(`<div class="columns" id="item${amount}"><div class="column is-one-third"><textarea class="textarea item" placeholder="e.g. Hello world" id="value${amount}"></textarea></div><div class="column"> <a class="button is-light"><i class="fas fa-arrows-alt"></i> </a> <a class="button is-primary A" id="add" ><i class="fas fa-plus" style="font-size:1.4em !important"></i> </a> <button class="button is-danger" type="button" onclick="removeDiv('item${amount}')"><span class="fa fa-trash"></span></button></div></div>`);
+    var page = $('#tagsForm').find(`div.page#${amount}`);
+    console.log(page);
+  })
+
+function removeDiv(id){
+  $(`#${id}`).remove();
+}
+
+function getValues(){
+  let valueArr = [];
+  for(let elem of document.getElementsByClassName('item')){
+    valueArr.push(elem.value);
+  }
+  return valueArr;
+}
+
+
+
+$('#test').click(function() {
+    var steps = getValues();
+    console.log(steps)
+    steps.push();
+    $.ajax({
+          type: "POST",
+          contentType: "application/json;charset=utf-8",
+          url: "/your/flask/2",
+          traditional: "true",
+          data: JSON.stringify({steps}),
+          dataType: "json"
+          });
+    ingredients.push($('#demo').val());
+        console.log(ingredients);
+        $.ajax({
+          type: "POST",
+          contentType: "application/json;charset=utf-8",
+          url: "/your/flask/endpoint",
+          traditional: "true",
+          data: JSON.stringify({ingredients}),
+          dataType: "json"
+          });
+    });
+
+ 
+
+
+var list = document.getElementById('demo');
+var lastid = 0;
+var ingredients = []
+function changeText2() {
+    var firstname = document.getElementById('firstname').value;
+    ingredients.push(firstname)
+    var entry = document.createElement('li');
+    entry.appendChild(document.createTextNode(firstname));
+    entry.setAttribute('id','item'+lastid);
+    var removeButton = document.createElement('button');
+    removeButton.appendChild(document.createTextNode("remove"));
+    removeButton.setAttribute('onClick','removeName("'+'item'+lastid+'")');
+    entry.appendChild(removeButton);
+    lastid+=1;
+    list.appendChild(entry);
+    console.log(ingredients)
+}
+
+
+function removeName(itemid){
+    var item = document.getElementById(itemid);
+    list.removeChild(item);
+
+    var arrdel = item.firstChild.wholeText;
+    var index = ingredients.indexOf(arrdel);
+    if (index !== -1) ingredients.splice(index, 1);
+
+    console.log(ingredients)
+}
+
+ </script>
+
+
+</html>

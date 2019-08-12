@@ -28,13 +28,13 @@ body { padding-top: 50px; }
 .overlay-img{
     padding-top: 90px;
 }
-.container{
+.cont-tab{
   padding-top: 90px;
 }
-/* svg.svg-inline--fa{
+svg.svg-inline--fa.orange{
   color: orangered;
   text-align: center !important;
-} */
+}
 
 .img-circular{
     width: 170px;

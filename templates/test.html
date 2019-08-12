@@ -1,0 +1,33 @@
+
+<div id="image-list2" class="sortable-list"></div>
+       
+      <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+
+
+<style>
+@import "compass/css3";
+
+body{margin:50px;}
+.fa{min-width:14px;}
+.form-inline .form-control,
+.form-inline .btn{margin-bottom:8px;}
+.form-group{
+  width: 100%;
+}
+</style>
+<script>
+$('.tagsForm').sortable({ 
+  connectWith: '.sortable-list',
+  update: function(event, ui) {
+    var changedList = this.id;
+    var order = $(this).sortable('toArray');
+    var positions = order.join(';');
+
+    console.log({
+      id: changedList,
+      positions: positions
+    });
+  }
+});
+</script>
