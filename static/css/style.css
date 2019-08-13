@@ -29,7 +29,7 @@ body { padding-top: 50px; }
     padding-top: 90px;
 }
 .cont-tab{
-  padding-top: 90px;
+  padding-top: 90px !important;
 }
 svg.svg-inline--fa.orange{
   color: orangered;
@@ -75,4 +75,82 @@ svg.svg-inline--fa.orange{
 .subtitle.is-5.orange{
   font-size: 1.2rem;
 
+}
+
+.flex-card {
+  position: relative;
+  background-color: #fff;
+  border: 1px solid #fcfcfc;
+  border-radius: 0.1875rem;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  margin-bottom: 20px;
+  transition: all 0.5s
+}
+
+.flex-card .flex-card-header {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  border-bottom: 1px solid #ededed;
+  padding: 10px 15px
+}
+
+.flex-card .flex-card-header .header-avatar {
+  max-height: 45px
+}
+
+.flex-card .flex-card-header .header-avatar img {
+  height: 45px;
+  border-radius: 100px
+}
+
+.flex-card .flex-card-header .header-info {
+  margin: 0 10px
+}
+
+.flex-card .flex-card-header .header-info .header-title {
+  font-size: 1.2rem
+}
+
+.flex-card .flex-card-header .header-info .header-subtitle {
+  font-size: 0.9rem;
+  color: #A9ABAC
+}
+
+.flex-card .flex-card-header .header-control {
+  margin-right: 10px
+}
+
+.flex-card .flex-card-header .header-control i {
+  font-size: 0.8rem;
+  color: #A9ABAC
+}
+
+
+.flex-card .card-body {
+  padding: 30px 30px
+}
+
+.flex-card .card-body.is-small {
+  padding: 20px 20px
+}
+
+
+.flex-card.light-bordered {
+  border: 1px solid #e5e5e5 !important
+}
+
+
+
+.flex-card.hover-inset:hover {
+  box-shadow: inset rgba(143,160,241,0.2) 0 0 0 1px,rgba(213,220,247,0.59) 0 10px 20px;
+  cursor: pointer
 }

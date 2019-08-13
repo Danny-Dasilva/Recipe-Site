@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return render_template("java3.html")
+    return render_template("test.html")
 
 @app.route('/your/flask/endpoint', methods=['POST'])
 def get_names():
