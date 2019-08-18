@@ -115,11 +115,10 @@ def new_post():
     form = PostForm()
     if form.validate_on_submit():
         if form.picture1.data:
-            print("66666666666666666666666666666666")
             form_picture_file = save_post_picture(form.picture1.data)
             form.picture1.data = form_picture_file
-            
-        post = Post(title=form.title.data, content=form.content.data, image=form.picture1.data,author=current_user)
+        ingredients = "666666"
+        post = Post(title=form.title.data, ingredients=ingredients,steps=form.content.data, image=form.picture1.data,author=current_user)
         db.session.add(post)
         db.session.commit()
         flash(f'your post has been uploaded', 'success')
@@ -219,3 +218,49 @@ def reset_token(token):
         flash('Your password has been updated! You are now able to log in', 'success')
         return redirect(url_for('login'))
     return render_template('reset_token.html', title='Reset Password', form=form)
+
+
+
+@app.route('/your/flask/ingredients', methods=['POST'])
+def ingredients():
+    if request.method == 'POST':
+       names = request.get_json()
+       for i in names:
+            print(names[i])			
+    return '', 200
+
+@app.route('/your/flask/steps', methods=['POST'])
+def steps():
+    
+    if request.method == 'POST':
+        form = PostForm()
+        if form.picture1.data:
+            form_picture_file = save_post_picture(form.picture1.data)
+            form.picture1.data = form_picture_file
+        
+        # return redirect(url_for('home'))
+        data = request.json
+        title = request.json.get('data1')
+        steps = request.json.get('data2')
+        igred = request.json.get('data3')
+        print(title)
+        print(steps)
+        print(igred)
+        
+
+        post = Post(title=title, ingredients=igred,steps=steps, image=form.picture1.data,author=current_user)
+        db.session.add(post)
+        db.session.commit()
+        flash(f'your post has been uploaded', 'success')
+            		
+    return '', 200
+
+@app.route('/java3')
+def post_form():	
+    return render_template('java3.html')
+
+@app.route("/test")
+def test():
+    page = request.args.get('page', 1, type=int)
+    posts = Post.query.order_by(Post.date_posted.desc()).paginate(page=page, per_page=5)
+    return render_template('index.html', posts=posts)

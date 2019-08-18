@@ -26,7 +26,13 @@
         </div>
       </div>
     </nav>
-<div class="container cont-tab">
+
+<div class="container cont-tab" style="padding-top: 70px;">
+  <textarea class="textarea" placeholder="e.g. Title" id="title"></textarea>    
+  Time: <input type="text" id="time">
+  Number of people: <input type="text" id="serves">
+  Calories:  <input type="text" id="calories">
+  <br>
     Add Ingredient:
 <input type="text" id="firstname">
 <br>
@@ -89,24 +95,22 @@ $('#test').click(function() {
     var steps = getValues();
     console.log(steps)
     steps.push();
+    title = document.getElementById('title').value;
+    console.log(title)
+    ingredients.push($('#demo').val())
+    steps1 = JSON.stringify({steps})
+    ingredients1 = JSON.stringify({ingredients})
+    idata = { 'data1': title, 'data2': steps, 'data3': ingredients }
+    console.log(idata)
     $.ajax({
           type: "POST",
           contentType: "application/json;charset=utf-8",
           url: "/your/flask/steps",
           traditional: "true",
-          data: JSON.stringify({steps}),
+          data: JSON.stringify(idata),
           dataType: "json"
           });
-    ingredients.push($('#demo').val());
         console.log(ingredients);
-        $.ajax({
-          type: "POST",
-          contentType: "application/json;charset=utf-8",
-          url: "/your/flask/ingredients",
-          traditional: "true",
-          data: JSON.stringify({ingredients}),
-          dataType: "json"
-          });
     });
 
  
