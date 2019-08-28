@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
  
   <link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static',filename='core_deep-blue.css') }}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
   <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
@@ -18,7 +19,7 @@
    {% else %}
         <title>Flask Blog</title>
    {% endif %}
-
+</head>
 <nav class="navbar is-fixed-top">
   <div class="container is-small">
     <div class="navbar-brand"><a class="navbar-item" href="/"><img src="/logos/ftw/ftw_mark_white.png"
@@ -43,9 +44,9 @@
   </div>
 </nav>
 
-
+<body>
     <main role="main" class="container">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">  <div class="collumns">
+       <div class="collumns">
         <div class="collumn">
           {% with messages = get_flashed_messages(with_categories=true) %}
             {% if messages %}
@@ -60,10 +61,10 @@
         </div>
      
       </div>
-      {% block content %}{% endblock %}
+     
 
     </main>
-
+    {% block content %}{% endblock %}
     
    </body>
 </html>

@@ -1,0 +1,526 @@
+
+.
+/*! _hero.scss | Bulkit | CSS Ninja */
+
+.hero.is-relative {
+    position: relative
+}
+
+
+
+.hero.is-light-grey {
+    background-color: #EFF4F7;
+    background-image: linear-gradient(141deg, #d0e0ec 0%, #f5f7fa 71%, white 100%)
+}
+
+
+
+.hero-body {
+    background-size: cover !important;
+    background-repeat: no-repeat !important
+}
+
+
+/*! _animations.scss | Bulkit | CSS Ninja */
+
+.animated {
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 0.5s;
+    -webkit-animation-fill-mode: both
+}
+
+.fadeIn {
+    opacity: 0;
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn
+}
+
+@-webkit-keyframes fadeInLeft {
+    from {
+        -webkit-transform: translate3d(20px, 0, 0);
+        transform: translate3d(20px, 0, 0);
+        opacity: 0
+    }
+    to {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        opacity: 1
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        -webkit-transform: translate3d(20px, 0, 0);
+        transform: translate3d(20px, 0, 0);
+        opacity: 0
+    }
+    to {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        opacity: 1
+    }
+}
+
+.preFadeInLeft {
+    opacity: 0
+}
+
+.fadeInLeft {
+    opacity: 0;
+    -webkit-animation-name: fadeInLeft;
+    animation-name: fadeInLeft
+}
+
+
+
+
+
+
+
+/*! _buttons.scss | Bulkit | CSS Ninja */
+
+.button {
+    transition: all 0.5s
+}
+
+
+
+.button.button-cta {
+    padding: 22px 40px !important
+}
+
+
+
+.button.no-lh {
+    line-height: 0 !important
+}
+
+
+
+.button.btn-align {
+    padding: 3px 13px 6px 13px
+}
+
+
+
+.button.rounded {
+    border-radius: 500px
+}
+
+
+
+
+.button.is-fullwidth {
+    display: block !important;
+    width: 100% !important;
+    text-align: center !important
+}
+
+
+
+.button.secondary-btn {
+    outline: none;
+    border-color: #7c4dff;
+    background-color: #7c4dff;
+    color: #fff;
+    transition: all 0.5s
+}
+
+
+
+.flex-card {
+    position: relative;
+    background-color: #fff;
+    border: 1px solid #fcfcfc;
+    border-radius: 0.1875rem;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    margin-bottom: 20px;
+    transition: all 0.5s
+}
+
+
+
+
+
+
+.control-material {
+    position: relative;
+    margin-bottom: 3em
+}
+
+.control-material input,
+.control-material textarea {
+    border-radius: 0 !important
+}
+
+.control-material.is-primary input.material-input:focus ~ label,
+.control-material.is-primary input:valid ~ label,
+.control-material.is-primary textarea:focus ~ label {
+    color: #0082c8
+}
+
+.control-material.is-primary .bar:before,
+.control-material.is-primary .bar:after {
+    background: #0082c8
+}
+
+.control-material.is-primary.has-icon input:focus ~ i {
+    color: #0082c8 !important
+}
+
+.control-material.is-secondary input.material-input:focus ~ label,
+.control-material.is-secondary input:valid ~ label,
+.control-material.is-secondary textarea:focus ~ label {
+    color: #7c4dff
+}
+
+.control-material.is-secondary .bar:before,
+.control-material.is-secondary .bar:after {
+    background: #7c4dff
+}
+
+.control-material.is-secondary.has-icon input:focus ~ i {
+    color: #7c4dff !important
+}
+
+.control-material.is-accent input.material-input:focus ~ label,
+.control-material.is-accent input:valid ~ label,
+.control-material.is-accent textarea:focus ~ label {
+    color: #6441A5
+}
+
+.control-material.is-accent .bar:before,
+.control-material.is-accent .bar:after {
+    background: #6441A5
+}
+
+.control-material.is-accent.has-icon input:focus ~ i {
+    color: #6441A5 !important
+}
+
+.control-material.is-light input.material-input:focus ~ label,
+.control-material.is-light input:valid ~ label,
+.control-material.is-light textarea:focus ~ label {
+    color: #fff
+}
+
+.control-material.is-light .bar:before,
+.control-material.is-light .bar:after {
+    background: #fff
+}
+
+.control-material.is-light.has-icon input:focus ~ i {
+    color: #fff !important
+}
+
+.control-material input.material-input,
+.control-material textarea {
+    width: 100% !important;
+    font-size: 18px;
+    padding: 0.625em 0.625em 0.625em 0.3125em;
+    display: block;
+    width: 18.75em;
+    border: none;
+    border-bottom: 1px solid #A9ABAC;
+    background-color: transparent !important
+}
+
+.control-material input.material-input:focus,
+.control-material textarea:focus {
+    outline: none
+}
+
+.control-material label {
+    font-family: 'Arial';
+    color: #cecece;
+    font-size: 15px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 0.3125em;
+    top: 0.625em;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all
+}
+
+.control-material input.material-input:focus ~ label,
+.control-material input:valid ~ label,
+.control-material textarea:focus ~ label {
+    top: -20px;
+    left: -2px;
+    font-size: 12px
+}
+
+.control-material .bar {
+    position: relative;
+    display: block
+}
+
+.control-material .bar:before,
+.control-material .bar:after {
+    content: '';
+    height: 2px;
+    width: 0;
+    bottom: 0px;
+    position: absolute;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all
+}
+
+.control-material .bar:before {
+    left: 50%
+}
+
+.control-material .bar:after {
+    right: 50%
+}
+
+.control-material input.material-input:focus ~ .bar:before,
+.control-material input.material-input:focus ~ .bar:after,
+.control-material textarea:focus ~ .bar:before,
+.control-material textarea:focus ~ .bar:after {
+    width: 50%
+}
+
+
+
+
+
+.checkbox-wrap,
+.radio-wrap {
+    position: relative;
+    cursor: pointer;
+    padding: 1em
+}
+
+
+
+.checkbox-wrap input.d-checkbox+span,
+.radio-wrap input.d-checkbox+span,
+.checkbox-wrap input.b-radio+span,
+.radio-wrap input.b-radio+span {
+    background: #fff;
+    content: "";
+    display: inline-block;
+    margin: 0 .5em 0 0;
+    padding: 0;
+    border: 1px solid #999;
+    vertical-align: middle;
+    width: 2em;
+    height: 2em
+}
+
+.checkbox-wrap input.d-checkbox+span::after,
+.radio-wrap input.d-checkbox+span::after,
+.checkbox-wrap input.b-radio+span::after,
+.radio-wrap input.b-radio+span::after {
+    content: "";
+    display: block;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    transition: -webkit-transform .2s;
+    transition: transform .2s;
+    transition: transform .2s, -webkit-transform .2s
+}
+
+
+
+.checkbox-wrap input.d-checkbox,
+.radio-wrap input.d-checkbox,
+.checkbox-wrap input.b-radio,
+.radio-wrap input.b-radio {
+    position: absolute;
+    cursor: pointer;
+    opacity: 0
+}
+
+.checkbox-wrap input+span {
+    border-radius: 2px
+}
+
+.checkbox-wrap input+span::after {
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSI2NHB4IiBoZWlnaHQ9IjY0cHgiIHZpZXdCb3g9IjAgMCA2NCA2NCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgNjQgNjQiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxnPjxwb2x5Z29uIHBvaW50cz0iMTMuNzA3LDMyLjI5MyAxMi4yOTMsMzMuODU0IDI0LjI5Myw0NiAyNS43MDcsNDYgNDkuNzA3LDIxLjg1NCA0OC4yOTMsMjAuMzY2IDI1LDQzLjYyMyAiLz48L2c+PC9zdmc+) no-repeat center;
+    background-size: contain;
+    width: 1.9em;
+    height: 1.9em
+}
+
+.checkbox-wrap.is-medium input+span {
+    width: 1.4em;
+    height: 1.4em
+}
+
+.checkbox-wrap.is-medium input+span::after {
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSI2NHB4IiBoZWlnaHQ9IjY0cHgiIHZpZXdCb3g9IjAgMCA2NCA2NCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgNjQgNjQiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxnPjxwb2x5Z29uIHBvaW50cz0iMTMuNzA3LDMyLjI5MyAxMi4yOTMsMzMuODU0IDI0LjI5Myw0NiAyNS43MDcsNDYgNDkuNzA3LDIxLjg1NCA0OC4yOTMsMjAuMzY2IDI1LDQzLjYyMyAiLz48L2c+PC9zdmc+) no-repeat center;
+    background-size: contain;
+    width: 1.3em;
+    height: 1.3em
+}
+
+
+
+
+
+
+
+
+
+
+
+.forgot,
+.no-account,
+.return {
+    color: #A9ABAC !important;
+    transition: opacity 0.5s
+}
+
+
+
+.forgot.is-secondary,
+.no-account.is-secondary,
+.return.is-secondary {
+    color: #7c4dff !important
+}
+.forgot.is-accent,
+.no-account.is-warning,
+.return.is-accent {
+    color:lightskyblue !important;
+}
+
+
+.checkbox-wrap {
+    color: #A9ABAC;
+    margin-bottom: 10px
+}
+
+.checkbox-wrap span {
+    position: relative;
+    top: -2px
+}
+
+
+/*! _landing-v2.scss | Bulkit | CSS Ninja */
+
+.hero.hero-wavy:before {
+    background: transparent url(../images/bg/shapes/wavy-alt.png) no-repeat scroll 0 bottom/100% auto;
+    content: "";
+    height: 321px;
+    width: 100%;
+    z-index: 1 !important;
+    position: absolute;
+    bottom: -1px;
+    left: 0
+}
+
+
+.clean-login-card,
+.clean-signup-card {
+    padding: 40px 40px 10px 40px;
+    border-radius: 6px;
+    max-width: 400px;
+    margin: auto;
+    background-color: #fff;
+    border: 1px solid #ecf0f1;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05)
+}
+
+.clean-login-card h2,
+.clean-signup-card h2 {
+    font-size: 24px;
+    padding: 20px 0;
+    font-weight: 700 !important;
+    font-family: 'Nexa Light', sans-serif
+}
+
+
+/*! _layout-utils.scss | Bulkit | CSS Ninja */
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    overflow: hidden !important
+}
+
+a,
+a:active,
+i,
+i:active,
+div,
+div:active,
+div:focus,
+span:focus,
+span:active {
+    outline: none !important
+}
+
+
+
+.dark-text {
+    color: #444F60 !important
+}
+
+
+.text-bold {
+    font-weight: 600 !important
+}
+
+
+
+.z-index-2 {
+    z-index: 2 !important
+}
+
+
+.pt-10 {
+    padding-top: 10px
+}
+
+.pt-20 {
+    padding-top: 20px
+}
+
+
+
+.pt-50 {
+    padding-top: 50px
+}
+
+
+
+.pb-10 {
+    padding-bottom: 10px
+}
+
+.pb-20 {
+    padding-bottom: 20px
+}
+
+
+
+.pb-50 {
+    padding-bottom: 50px
+}
+
+
+
+.huge-pb {
+    padding-bottom: 100px
+}
+
+
+
+.mt-20 {
+    margin-top: 20px
+}
+
+
+
+.is-hidden {
+    display: none !important
+}
+
