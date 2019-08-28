@@ -10,7 +10,7 @@
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
  
 <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    
+<link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}">
   </head>
   <nav class="navbar is-fixed-top">
       <div class="container is-small">
@@ -27,18 +27,50 @@
       </div>
     </nav>
 
-<div class="container cont-tab" style="padding-top: 70px;">
-  <textarea class="textarea" placeholder="e.g. Title" id="title"></textarea>    
-  Time: <input type="text" id="time">
-  Number of people: <input type="text" id="serves">
-  Calories:  <input type="text" id="calories">
-  <br>
-    Add Ingredient:
-<input type="text" id="firstname">
-<br>
-<p>Current Ingredients</p>
-<ol id="demo"></ol>
-<input type='button' onclick='changeText2()' value='Add' />
+<div class="container">
+  <div class="columns">
+  
+      <div class="column">
+    
+    <h1 class="title">Title</h1>
+  <input class="input is-primary" type="text" id="title" placeholder="e.g. Title" >
+  </div>
+</div>
+<div class="columns">
+  <div class="column"> 
+    <p>Time: </p> 
+    <input class="input is-info" type="text" id="time" placeholder="e.g. 30 min" ></div>
+  <div class="column">  
+    <p>Number of people:</p>  
+    <input class="input is-info" type="text" id="serves" placeholder="e.g. 2 people" ></div>
+ 
+  <div class="column">
+      <p>Calories: </p>  
+      <input class="input is-info" type="text" id="cal" placeholder="e.g. 350 calories" >
+    </div>
+  </div>
+  
+  
+  
+ 
+  
+  <div class="columns">
+    <div class="column">
+
+        <p>Add Ingredient: </p>
+        <input class="input is-orange" type="text" id="firstname" placeholder="e.g. 350 calories" >  
+        <a class="button is-primary"  onclick='changeText2()' value='2'><i class="fas fa-plus" style="font-size:1.4em !important"></i> </a>
+        
+        <br>
+        <p>Current Ingredients</p>
+        <ol id="demo"></ol>
+        
+    </div>
+      
+    
+  </div>
+   
+
 
 
 
@@ -123,15 +155,19 @@ function changeText2() {
     var firstname = document.getElementById('firstname').value;
     ingredients.push(firstname)
     var entry = document.createElement('li');
-    entry.appendChild(document.createTextNode(firstname));
+    entry.appendChild(document.createTextNode(firstname + '\xa0\xa0\xa0\xa0\xa0\xa0\xa0'));
     entry.setAttribute('id','item'+lastid);
     var removeButton = document.createElement('button');
-    removeButton.appendChild(document.createTextNode("remove"));
+    removeButton.className = "button is-danger tab"; 
+    removeButton.appendChild(document.createTextNode("delete"));
     removeButton.setAttribute('onClick','removeName("'+'item'+lastid+'")');
     entry.appendChild(removeButton);
     lastid+=1;
     list.appendChild(entry);
     console.log(ingredients)
+    document.getElementById('firstname').value = ""
+   
+
 }
 
 

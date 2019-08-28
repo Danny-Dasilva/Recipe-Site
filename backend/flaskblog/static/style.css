@@ -386,3 +386,16 @@ svg.svg-inline--fa.orange{
   display: block;
   width: 33.3%;
 }
+
+.input.is-info {
+  max-width: 80%;
+}
+
+.is-orange.input, .is-orange.textarea.is-danger.input, .is-orange.textarea{
+  border-color: orange;
+  max-width: 30% !important;
+}
+ol{
+  margin: inherit !important;
+  padding: 10px 0px 0px 30px !important;
+}
