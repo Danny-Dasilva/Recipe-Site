@@ -128,11 +128,13 @@ $('#test').click(function() {
     console.log(steps)
     steps.push();
     title = document.getElementById('title').value;
-    console.log(title)
+    time = document.getElementById('time').value;
+    serves = document.getElementById('serves').value;
+    cal = document.getElementById('cal').value; 
     ingredients.push($('#demo').val())
     steps1 = JSON.stringify({steps})
     ingredients1 = JSON.stringify({ingredients})
-    idata = { 'data1': title, 'data2': steps, 'data3': ingredients }
+    idata = { 'title': title, 'time': time,'serves': serves, time,'cal': cal, 'steps': steps, 'ingredients': ingredients }
     console.log(idata)
     $.ajax({
           type: "POST",

@@ -238,20 +238,23 @@ def steps():
             form_picture_file = save_post_picture(form.picture1.data)
             form.picture1.data = form_picture_file
         
-        # return redirect(url_for('home'))
+        #return redirect(url_for('home'))
         data = request.json
-        title = request.json.get('data1')
-        steps = request.json.get('data2')
-        igred = request.json.get('data3')
-        print(title)
+        title = request.json.get('title')
+        time = request.json.get('time')
+        serves = request.json.get('serves')
+        cal = request.json.get('cal')
+        steps = request.json.get('steps')
+        igred = request.json.get('ingredients')
+        print(title, time, serves, cal)
         print(steps)
         print(igred)
         
 
-        post = Post(title=title, ingredients=igred,steps=steps, image=form.picture1.data,author=current_user)
-        db.session.add(post)
-        db.session.commit()
-        flash(f'your post has been uploaded', 'success')
+        #post = Post(title=title, ingredients=igred,steps=steps, image=form.picture1.data,author=current_user)
+       # db.session.add(post)
+       # db.session.commit()
+       # flash(f'your post has been uploaded', 'success')
             		
     return '', 200
 
