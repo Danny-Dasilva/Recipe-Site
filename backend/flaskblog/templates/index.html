@@ -28,9 +28,64 @@
       
       <div class="container">
          <!-- Flex card hover inset -->
+         {% for post in posts.items %}
+        
+         {% if loop.index % 4 == 0  %}
+        </div>
+        {% endif %}
+        
+         {% if loop.index == 1 or loop.index % 4 == 0  %}
+       
+        
          <div class="columns">
 
-          <div class="column is-4">
+            <div class="column is-4">
+                <!-- Demo section -->
+                <div class="flex-card light-bordered hover-inset">
+                    <div class="card-body">
+                        <div class="content">
+                                <div class="header-avatar">
+                                        <img class="card-image" src="/img/coca-cola-circle-logo-A9EBD3B00A-seeklogo.com.png" alt=""
+    >
+                                    </div>
+    
+                            <h2 class="no-margin title-bold has-text-centered">{{ post.title }}</h2>
+    
+                            
+                                    <div class="card-text">  
+                                      <div class="card-section">
+    
+                                          <h6 class="subtitle is-6 has-text-centered">Time</h6>
+                                          <h5 class="title is-5 has-text-centered ">{{ post.time }}</h5>
+                                      </div>
+                                           
+                                    
+                                    
+                                    <div class="is-divider-vertical"></div>
+                                    
+                                    <div class="card-section">
+                                            <h6 class="subtitle is-6 has-text-centered">Serves</h6>
+                                            <h5 class="title is-5 has-text-centered">{{ post.serves }}</h5>
+                                    </div>
+    
+                                    <div class="is-divider-vertical" ></div>
+                                    
+                                    <div class="card-section">
+                                            <h6 class="subtitle is-6 has-text-centered">Calories</h6>
+                                            <h5 class="title is-5 has-text-centered">{{ post.cal }}</h5>
+                                    </div>
+                                  </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Demo section -->
+    
+                <!-- /Code section -->
+            </div>
+              
+      
+         {% else %}
+         <div class="column is-4">
             <!-- Demo section -->
             <div class="flex-card light-bordered hover-inset">
                 <div class="card-body">
@@ -40,14 +95,14 @@
 >
                                 </div>
 
-                        <h2 class="no-margin title-bold has-text-centered">French Onion Soup</h2>
+                        <h2 class="no-margin title-bold has-text-centered">{{ post.title }}</h2>
 
                         
                                 <div class="card-text">  
                                   <div class="card-section">
 
                                       <h6 class="subtitle is-6 has-text-centered">Time</h6>
-                                      <h5 class="title is-5 has-text-centered ">30</h5>
+                                      <h5 class="title is-5 has-text-centered ">{{ post.time }}</h5>
                                   </div>
                                        
                                 
@@ -56,19 +111,16 @@
                                 
                                 <div class="card-section">
                                         <h6 class="subtitle is-6 has-text-centered">Serves</h6>
-                                        <h5 class="title is-5 has-text-centered">4</h5>
+                                        <h5 class="title is-5 has-text-centered">{{ post.serves }}</h5>
                                 </div>
 
                                 <div class="is-divider-vertical" ></div>
                                 
                                 <div class="card-section">
                                         <h6 class="subtitle is-6 has-text-centered">Calories</h6>
-                                        <h5 class="title is-5 has-text-centered">340</h5>
+                                        <h5 class="title is-5 has-text-centered">{{ post.cal }}</h5>
                                 </div>
-                                
                               </div>
-
-                    
                     </div>
                 </div>
             </div>
@@ -76,106 +128,34 @@
 
             <!-- /Code section -->
         </div>
+          {% endif %}
 
-        <div class="column is-4">
-            <!-- Demo section -->
-            <div class="flex-card light-bordered hover-inset">
-                <div class="card-body">
-                    <div class="content">
-                            <div class="header-avatar">
-                                    <img class="card-image" src="/img/coca-cola-circle-logo-A9EBD3B00A-seeklogo.com.png" alt=""
->
-                                </div>
-
-                        <h2 class="no-margin title-bold has-text-centered">French Onion Soup</h2>
-
-                        
-                                <div class="card-text">  
-                                  <div class="card-section">
-
-                                      <h6 class="subtitle is-6 has-text-centered">Time</h6>
-                                      <h5 class="title is-5 has-text-centered ">30</h5>
-                                  </div>
-                                       
-                                
-                                
-                                <div class="is-divider-vertical"></div>
-                                
-                                <div class="card-section">
-                                        <h6 class="subtitle is-6 has-text-centered">Serves</h6>
-                                        <h5 class="title is-5 has-text-centered">4</h5>
-                                </div>
-
-                                <div class="is-divider-vertical" ></div>
-                                
-                                <div class="card-section">
-                                        <h6 class="subtitle is-6 has-text-centered">Calories</h6>
-                                        <h5 class="title is-5 has-text-centered">340</h5>
-                                </div>
-                                
-                              </div>
-
-                    
-                    </div>
-                </div>
-            </div>
-            <!-- /Demo section -->
-
-            <!-- /Code section -->
-        </div>
         
 
-        <div class="column is-4">
-            <!-- Demo section -->
-            <div class="flex-card light-bordered hover-inset">
-                <div class="card-body">
-                    <div class="content">
-                            <div class="header-avatar">
-                                    <img class="card-image" src="/img/coca-cola-circle-logo-A9EBD3B00A-seeklogo.com.png" alt=""
->
-                                </div>
+           
 
-                        <h2 class="no-margin title-bold has-text-centered">French Onion Soup</h2>
+         
+             
+          {% endfor %}  
+      </div>
+ 
 
-                        
-                                <div class="card-text">  
-                                  <div class="card-section">
 
-                                      <h6 class="subtitle is-6 has-text-centered">Time</h6>
-                                      <h5 class="title is-5 has-text-centered ">30</h5>
-                                  </div>
-                                       
-                                
-                                
-                                <div class="is-divider-vertical"></div>
-                                
-                                <div class="card-section">
-                                        <h6 class="subtitle is-6 has-text-centered">Serves</h6>
-                                        <h5 class="title is-5 has-text-centered">4</h5>
-                                </div>
 
-                                <div class="is-divider-vertical" ></div>
-                                
-                                <div class="card-section">
-                                        <h6 class="subtitle is-6 has-text-centered">Calories</h6>
-                                        <h5 class="title is-5 has-text-centered">340</h5>
-                                </div>
-                                
-                              </div>
 
-                    
-                    </div>
-                </div>
-            </div>
-            <!-- /Demo section -->
 
-            <!-- /Code section -->
+      {% for page_num in posts.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
+      {% if page_num %}
+        {% if posts.page == page_num %}
+          <a class="button " href="{{ url_for('test', page=page_num) }}">{{ page_num }}</a>
+        {% else %}
+          <a class="button  " href="{{ url_for('test', page=page_num) }}">{{ page_num }}</a>
+        {% endif %}
+      {% else %}
+        ...
+      {% endif %}
+    {% endfor %}
         </div>
-
-          
-  
-          
-          </div>
           <!-- /Flex hover card inset -->
 
               

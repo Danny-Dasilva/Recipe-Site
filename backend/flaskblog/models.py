@@ -37,6 +37,9 @@ class User(db.Model, UserMixin):
 class Post(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(100), nullable=False)
+    time = db.Column(db.String(100), nullable=False)
+    serves = db.Column(db.String(100), nullable=False)
+    cal = db.Column(db.String(100), nullable=False)
     date_posted = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     ingredients = db.Column(db.PickleType(), nullable=False)
     steps = db.Column(db.PickleType(), nullable=False)
@@ -46,4 +49,4 @@ class Post(db.Model):
     
 
     def __repr__(self):
-        return f"Post('{self.title}', '{self.ingredients}', '{self.steps}', {self.date_posted}', '{self.image}')"
+        return f"Post('{self.title}', '{self.time}','{self.serves}','{self.cal}','{self.ingredients}', '{self.steps}', {self.date_posted}', '{self.image}')"

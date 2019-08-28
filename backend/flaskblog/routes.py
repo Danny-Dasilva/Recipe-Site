@@ -251,10 +251,10 @@ def steps():
         print(igred)
         
 
-        #post = Post(title=title, ingredients=igred,steps=steps, image=form.picture1.data,author=current_user)
-       # db.session.add(post)
-       # db.session.commit()
-       # flash(f'your post has been uploaded', 'success')
+        post = Post(title=title, time=time, serves=serves, cal=cal, ingredients=igred,steps=steps, image=form.picture1.data,author=current_user)
+        db.session.add(post)
+        db.session.commit()
+        flash(f'your post has been uploaded', 'success')
             		
     return '', 200
 
@@ -265,5 +265,5 @@ def post_form():
 @app.route("/test")
 def test():
     page = request.args.get('page', 1, type=int)
-    posts = Post.query.order_by(Post.date_posted.desc()).paginate(page=page, per_page=5)
+    posts = Post.query.order_by(Post.date_posted.desc()).paginate(page=page, per_page=6)
     return render_template('index.html', posts=posts)
