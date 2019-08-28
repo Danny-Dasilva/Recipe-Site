@@ -1,31 +1,5 @@
-
-
-<!DOCTYPE html>
-<html>  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hello Bulma!</title>
-    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
- <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
- 
-<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-<link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}">
-  </head>
-  <nav class="navbar is-fixed-top">
-      <div class="container is-small">
-        <div class="navbar-brand"><a class="navbar-item" href="/"><img src="/logos/ftw/ftw_mark_white.png"
-              alt="FTW logo"><span class="is-size-7 has-text-weight-light">&nbsp;&nbsp;TestNet</span></a>
-          <div role="button" tabindex="0" class="navbar-burger burger"><span></span><span></span><span></span></div>
-        </div>
-        <div class="navbar-menu">
-          <div class="navbar-end"><a class="navbar-item" href="/solutions/lottery">Lottery</a><a class="navbar-item"
-              href="/solutions/raffle">Raffle</a><a class="navbar-item" href="/ecosystem">Ecosystem</a><a
-              rel="noopener noreferrer" target="_blank" href="https://medium.com/ftw-blog" class="navbar-item">Blog</a><a
-              class="navbar-item">Sign in</a></div>
-        </div>
-      </div>
-    </nav>
+{% extends "layout-2.html" %}
+{% block content %}
 
 <div class="container">
   <div class="columns">
@@ -187,4 +161,4 @@ function removeName(itemid){
  </script>
 
 
-</html>
+{% endblock content %}

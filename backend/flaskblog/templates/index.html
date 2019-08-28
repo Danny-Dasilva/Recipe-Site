@@ -1,13 +1,5 @@
-<!DOCTYPE html>
-<html>  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hello Bulma!</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
-    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <link rel="stylesheet" href="static/style.css">
-  </head>
-  <body>
+{% extends "layout-2.html" %}
+{% block content %}
   <section class="section">
     <div class="container">
     <div class="columns">
@@ -110,7 +102,7 @@
                                 <div class="is-divider-vertical"></div>
                                 
                                 <div class="card-section">
-                                        <h6 class="subtitle is-6 has-text-centered">Serves</h6>
+                                   <h6 class="subtitle is-6 has-text-centered">Serves</h6>
                                         <h5 class="title is-5 has-text-centered">{{ post.serves }}</h5>
                                 </div>
 
@@ -164,6 +156,4 @@
         </div>
 
   </section>
-  <!-- /Card-Section -->
-  </body>
-</html>
+{% endblock content %}
