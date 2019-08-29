@@ -1,0 +1,77 @@
+{% extends "layout-2.html" %}
+{% block content %}
+<section class="section">
+  <div class="container">
+  <div class="columns">
+        <div class="column">
+                
+                <div class="desk">
+                        <img src="{{ url_for('static', filename='post_img/' + post.image) }}" alt="">
+                </div>
+                <div class="div-only-mobile">
+                        <h4 class="title is-4">{{ post.title }}<h4>
+                            <div class="overlay-img"></div>
+                            
+                            <div class="img-circular" style="background-image: url( {{ url_for('static', filename='post_img/' + post.image) }} );"></div>
+                                <div class="rounded-backround">
+
+                                </div>
+
+
+                </div>
+            </div>
+
+    <div class="column is-three-fifths tab-left">
+            <h1 class="title is-1 desk">{{ post.title }}<h1>
+        <h5 class="subtitle orange is-5">
+            <i class="far fa-clock orange"></i> {{ post.time }}
+            &emsp;
+            <i class="fas fa-user-alt orange"></i> {{ post.serves }}
+            &nbsp; &nbsp;
+            <i class="fas fa-fire orange"></i> {{ post.cal }}
+        </h5>
+        <div class="ingredietns">
+                <h5 class="title is-5">Ingredients</h5>
+                <table class="table is-fullwidth">
+                  <tbody>
+
+                      {% for i, k in ingred %}
+                      
+                      <tr> 
+                          {% if i%}
+                          <td>• {{ i }} </td>
+                          {% endif %}
+                          
+                          {% if k%}
+                          <td>• {{ k }} </td>
+                          {% endif %}
+                          </tr>
+
+                      {% endfor %}
+                     
+
+                    
+                
+                 
+               
+                
+                  
+                
+                  </tbody>
+                </table>
+                
+        </div>
+        <div class="directions">
+                <h5 class="title is-5">Instructions</h5>
+                {% for i in post.steps %}
+                <h6 class="subtitle is-6">• {{ i }}</h6>
+                {% endfor %}  
+              </div>
+    </div>
+  
+
+  </div>
+  </div>
+</section>
+
+{% endblock content %}

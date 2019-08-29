@@ -1,9 +1,4 @@
-items = {'1', '2', '3', '4', '5', '6', '7'}
+lis = (1, 2, 3, 4, 5, 6)
 
-
-for item in items:
-    if int(item) == 1 or int(item) % 3 == 0:
-        print(f'different div {item} endiv')
-    else:
-
-        print(f'normal div {item} endiv')
+for x, y in zip(*[iter(lis)]*2):
+    print(x, y)

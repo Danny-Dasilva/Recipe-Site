@@ -14,7 +14,7 @@ from flask_mail import Message
 @app.route("/home")
 def home():
     page = request.args.get('page', 1, type=int)
-    posts = Post.query.order_by(Post.date_posted.desc()).paginate(page=page, per_page=5)
+    posts = Post.query.order_by(Post.date_posted.desc()).paginate(page=page, per_page=6)
     return render_template('home.html', posts=posts)
 
 
@@ -105,10 +105,10 @@ def account():
     return render_template('account.html', title='Account',
                            image_file=image_file, form=form)
 
-
-@app.route("/post/new", methods=['GET', 'POST'])
+##delete this later
+@app.route("/post/new1", methods=['GET', 'POST'])
 @login_required
-def new_post():
+def new_post1():
     form = PostForm()
     if form.validate_on_submit():
         if form.picture1.data:
@@ -255,17 +255,25 @@ def steps():
             		
     return '', 200
 
-@app.route('/java3')
-def post_form():	
+@app.route('/post/new')
+@login_required
+def new_post():	
     return render_template('java3.html')
 
 @app.route("/test")
 def test():
     page = request.args.get('page', 1, type=int)
     posts = Post.query.order_by(Post.date_posted.desc()).paginate(page=page, per_page=6)
-    return render_template('index.html', posts=posts)
+    return render_template('home1.html', posts=posts)
 
 @app.route("/about")
 def about():
     return render_template('about.html', title='About')
+
+@app.route("/post1/<int:post_id>")
+def post1(post_id):
+    post = Post.query.get_or_404(post_id)
+    data = post.ingredients
+    x = zip(*[iter(data)]*2)
+    return render_template('post-1.html', title=post.title, post=post, ingred=x)
 

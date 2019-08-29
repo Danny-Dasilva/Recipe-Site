@@ -1,37 +1,178 @@
-{% extends "layout.html" %}
+{% extends "layout-2.html" %}
 {% block content %}
-    {% for post in posts.items %}
-        <article class="media content-section">
-          <img class="rounded-circle article-img" src="{{ url_for('static', filename='profile_pics/' + post.author.image_file) }}">
-          <div class="media-body">
-            <div class="article-metadata">
-              <a class="mr-2" href="{{ url_for('user_posts', username=post.author.username) }}">{{ post.author.username }}</a>
-              <small class="text-muted">{{ post.date_posted.strftime('%Y-%m-%d') }}</small>
-            </div>
-            <h2><a class="article-title" href="{{ url_for('post', post_id=post.id) }}">{{ post.title }}</a></h2>
-          
-          
-           {% for result in post.steps %}
-           <p class="article-content"> {{ result }} </p>
-          {% endfor %}
-          
-          {% for result in post.ingredients %}
-           {{ result }}
-         {% endfor %}
-            <img class="rounded-circle article-img" src="{{ url_for('static', filename='post_img/' + post.image) }}">
+  <section class="section">
+    <div class="container">
+    <div class="columns">
+      <div class="column">
+        <h2 class="title is-2">Our Picks</h2>
+        <h6 class="subtitle is-6">check out our selected recipe choices</h6>
+     
+      </div>
+     
+    </div>
+
+
+
+    </div>
+  </section>
+<!-- Card Section -->
+  <section>
+      
+      <div class="container">
+         <!-- Flex card hover inset -->
+         {% for post in posts.items %}
         
-          </div>
-        </article>
-    {% endfor %}
-    {% for page_num in posts.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
+         {% if loop.index % 4 == 0  %}
+        </div>
+        {% endif %}
+        
+         {% if loop.index == 1 or loop.index % 4 == 0  %}
+       
+        
+         <div class="columns">
+
+            <div class="column is-4">
+                <!-- Demo section -->
+                <div class="flex-card light-bordered hover-inset">
+                   
+                    <div class="card-body">
+                        <div class="content">
+                            
+                            <div class="article-metadata">
+                                <img class="profile-img" src="{{ url_for('static', filename='profile_pics/' + post.author.image_file) }}">
+                                <a class="mr-2" href="{{ url_for('user_posts', username=post.author.username) }}">{{ post.author.username }}</a>
+                                <small class="text-muted">{{ post.date_posted.strftime('%Y-%m-%d') }}</small>
+                              </div>
+                              <a  href="{{ url_for('post', post_id=post.id) }}" >
+                                  <div class="card-box">
+                                      <img class="card-image" src="{{ url_for('static', filename='post_img/' + post.image) }}" alt="">
+                                  </div>
+                             
+                                
+                             
+                            <h3 class="no-margin title-bold has-text-centered">{{ post.title }}</h3>
+    
+                            
+                                    <div class="card-text">  
+                                      <div class="card-section">
+    
+                                          <h6 class="subtitle is-6 has-text-centered">Time</h6>
+                                          <h5 class="title is-5 has-text-centered ">{{ post.time }}</h5>
+                                      </div>
+                                           
+                                    
+                                    
+                                    <div class="is-divider-vertical"></div>
+                                    
+                                    <div class="card-section">
+                                            <h6 class="subtitle is-6 has-text-centered">Serves</h6>
+                                            <h5 class="title is-5 has-text-centered">{{ post.serves }}</h5>
+                                    </div>
+    
+                                    <div class="is-divider-vertical" ></div>
+                                    
+                                    <div class="card-section">
+                                            <h6 class="subtitle is-6 has-text-centered">Calories</h6>
+                                            <h5 class="title is-5 has-text-centered">{{ post.cal }}</h5>
+                                    </div>
+                                  </div>
+                                </a>
+                        </div>
+                    </div>
+                
+                </div>
+                <!-- /Demo section -->
+    
+                <!-- /Code section -->
+            </div>
+              
+      
+         {% else %}
+         <div class="column is-4">
+            <!-- Demo section -->
+            <div class="flex-card light-bordered hover-inset">
+                <div class="card-body">
+                    <div class="content">
+                      
+                        <div class="article-metadata">
+                            <img class="profile-img" src="{{ url_for('static', filename='profile_pics/' + post.author.image_file) }}">
+                            <a class="mr-2" syle="padding-bottom: 10px; !important" href="{{ url_for('user_posts', username=post.author.username) }}">{{ post.author.username }}</a>
+                            <small class="text-muted">{{ post.date_posted.strftime('%Y-%m-%d') }}</small>
+                          </div>
+                          <a  href="{{ url_for('post', post_id=post.id) }}" >
+                            <div class="header-avatar">
+                                <img class="card-image" src="{{ url_for('static', filename='post_img/' + post.image) }}" alt=""
+>
+                                </div>
+
+                                <h3 class="no-margin title-bold has-text-centered">{{ post.title }}</h3>
+
+                        
+                                <div class="card-text">  
+                                  <div class="card-section">
+
+                                      <h6 class="subtitle is-6 has-text-centered">Time</h6>
+                                      <h5 class="title is-5 has-text-centered ">{{ post.time }}</h5>
+                                  </div>
+                                       
+                                
+                                
+                                <div class="is-divider-vertical"></div>
+                                
+                                <div class="card-section">
+                                   <h6 class="subtitle is-6 has-text-centered">Serves</h6>
+                                        <h5 class="title is-5 has-text-centered">{{ post.serves }}</h5>
+                                </div>
+
+                                <div class="is-divider-vertical" ></div>
+                                
+                                <div class="card-section">
+                                        <h6 class="subtitle is-6 has-text-centered">Calories</h6>
+                                        <h5 class="title is-5 has-text-centered">{{ post.cal }}</h5>
+                                </div>
+                              </div>
+                              </a>
+                    </div>
+                </div>
+            </div>
+            <!-- /Demo section -->
+
+            <!-- /Code section -->
+        </div>
+          {% endif %}
+
+        
+
+           
+
+         
+             
+          {% endfor %}  
+      </div>
+ 
+
+
+
+
+
+      {% for page_num in posts.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
       {% if page_num %}
         {% if posts.page == page_num %}
-          <a class="btn btn-info mb-4" href="{{ url_for('home', page=page_num) }}">{{ page_num }}</a>
+          <a class="button " href="{{ url_for('home', page=page_num) }}">{{ page_num }}</a>
         {% else %}
-          <a class="btn btn-outline-info mb-4" href="{{ url_for('home', page=page_num) }}">{{ page_num }}</a>
+          <a class="button  " href="{{ url_for('home', page=page_num) }}">{{ page_num }}</a>
         {% endif %}
       {% else %}
         ...
       {% endif %}
     {% endfor %}
+        </div>
+          <!-- /Flex hover card inset -->
+
+              
+                </div>
+            </div>
+        </div>
+
+  </section>
 {% endblock content %}
