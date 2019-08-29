@@ -124,9 +124,9 @@ def new_post1():
     return render_template('create_post.html', title='New Post',
                            form=form, legend='New Post')
 
-
+#delete this later
 @app.route("/post/<int:post_id>")
-def post(post_id):
+def post2(post_id):
     post = Post.query.get_or_404(post_id)
     return render_template('post.html', title=post.title, post=post)
 
@@ -271,9 +271,9 @@ def about():
     return render_template('about.html', title='About')
 
 @app.route("/post1/<int:post_id>")
-def post1(post_id):
+def post(post_id):
     post = Post.query.get_or_404(post_id)
     data = post.ingredients
     x = zip(*[iter(data)]*2)
-    return render_template('post-1.html', title=post.title, post=post, ingred=x)
+    return render_template('post.html', title=post.title, post=post, ingred=x)
 
