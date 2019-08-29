@@ -8,7 +8,7 @@ from flaskblog.forms import (RegistrationForm, LoginForm, UpdateAccountForm,
 from flaskblog.models import User, Post
 from flask_login import login_user, current_user, logout_user, login_required
 from flask_mail import Message
-
+import json
 
 @app.route("/")
 @app.route("/home")
@@ -131,9 +131,9 @@ def post2(post_id):
     return render_template('post1.html', title=post.title, post=post)
 
 
-@app.route("/post/<int:post_id>/update", methods=['GET', 'POST'])
+@app.route("/post/<int:post_id>/update2", methods=['GET', 'POST'])
 @login_required
-def update_post(post_id):
+def update_post2(post_id):
     post = Post.query.get_or_404(post_id)
     if post.author != current_user:
         abort(403)
@@ -145,10 +145,48 @@ def update_post(post_id):
         flash('Your post has been updated!', 'success')
         return redirect(url_for('post', post_id=post.id))
     elif request.method == 'GET':
+        print('6')
         form.title.data = post.title
-        form.content.data = post.content
+        form.content.data = post.ingredients
+
     return render_template('create_post.html', title='Update Post',
-                           form=form, legend='Update Post')
+                           post=post, legend='Update Post')
+
+
+@app.route("/post/<int:post_id>/update", methods=['GET', 'POST'])
+@login_required
+def update_post(post_id):
+    
+    post = Post.query.get_or_404(post_id)
+    
+    if post.author != current_user:
+        print('error')
+        abort(403)
+    print(request.method)
+    if request.method == 'POST':
+        form = PostForm()
+        if form.picture1.data:
+            form_picture_file = save_post_picture(form.picture1.data)
+            form.picture1.data = form_picture_file
+        
+        data = request.json
+        post.title = request.json.get('title')
+        post.time = request.json.get('time')
+        post.serves = request.json.get('serves')
+        post.cal = request.json.get('cal')
+        post.steps = request.json.get('steps')
+        post.ingredients = request.json.get('ingredients')
+
+        # post.image=form.picture1.data
+        db.session.commit()
+        return json.dumps({'success':True}), 200, {'ContentType':'application/json'} 
+    elif request.method == 'GET':
+        ingred = post.ingredients
+        steps = post.steps
+    return render_template('create_post1.html', title='Update Post',
+                           post=post, ingred=json.dumps(ingred), post_id=post_id, steps=json.dumps(steps), legend='Update Post')
+
+
 
 
 @app.route("/post/<int:post_id>/delete", methods=['POST'])
@@ -230,6 +268,7 @@ def ingredients():
 def steps():
     
     if request.method == 'POST':
+        
         form = PostForm()
         if form.picture1.data:
             form_picture_file = save_post_picture(form.picture1.data)
