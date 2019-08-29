@@ -15,12 +15,15 @@
                 <img class="profile-img" src="{{ url_for('static', filename='profile_pics/' + post.author.image_file) }}">
                 <a class="mr-2" href="{{ url_for('user_posts', username=post.author.username) }}">{{ post.author.username }}</a>
                 <small class="text-muted">{{ post.date_posted.strftime('%Y-%m-%d') }}</small>
-                <!-- {% if post.author == current_user %}
-                  <div>
-                    <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{{ url_for('update_post', post_id=post.id) }}">Update</a>
-                    <button type="button" class="btn btn-danger btn-sm m-1" data-toggle="modal" data-target="#deleteModal">Delete</button>
-                  </div>
-                {% endif %} -->
+                {% if post.author == current_user %}
+            
+                    
+                    <a class="button is-warning" href="{{ url_for('update_post', post_id=post.id) }}">Update</a>
+                    <a class="button is-danger open-modal" data-modal-id="#my-modal">Delete</a>
+                    
+                   
+                     
+                    {% endif %}
               </div>
 
 
@@ -34,16 +37,19 @@
         <div class="column">
                 
                 <div class="desk">
-                    <div class="article-metadata">
+                    <div class="article-metadata backround-white">
                         <img class="profile-img" src="{{ url_for('static', filename='profile_pics/' + post.author.image_file) }}">
                         <a class="mr-2" href="{{ url_for('user_posts', username=post.author.username) }}">{{ post.author.username }}</a>
                         <small class="text-muted">{{ post.date_posted.strftime('%Y-%m-%d') }}</small>
-                        <!-- {% if post.author == current_user %}
-                          <div>
-                            <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{{ url_for('update_post', post_id=post.id) }}">Update</a>
-                            <button type="button" class="btn btn-danger btn-sm m-1" data-toggle="modal" data-target="#deleteModal">Delete</button>
-                          </div>
-                        {% endif %} -->
+                        {% if post.author == current_user %}
+                    
+                            
+                            <a class="button is-warning" href="{{ url_for('update_post', post_id=post.id) }}">Update</a>
+                            <a class="button is-danger open-modal" data-modal-id="#my-modal">Delete</a>
+                            
+                           
+                             
+                            {% endif %}
                       </div>
 
                         <img src="{{ url_for('static', filename='post_img/' + post.image) }}" alt="">
@@ -114,23 +120,44 @@
 </section>
 
 <!-- Modal -->
-<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="deleteModalLabel">Delete Post?</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <form action="{{ url_for('delete_post', post_id=post.id) }}" method="POST">
-            <input class="btn btn-danger" type="submit" value="Delete">
-          </form>
-        </div>
+<div aria-hidden="" class="modal" id="my-modal">
+    <div class="modal-background close-modal" data-modal-id="#my-modal"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Delete Post?</p>
+      <button aria-label="close" class="delete close-modal" data-modal-id="#my-modal"></button>
+    </header>
+    <section class="modal-card-body">
+      <div class="content">
+        <!-- <h1>Hello World</h1> -->
+        <p>This post will be permanentally deleted</p>
+        
+        
       </div>
-    </div>
+    </section>
+    <footer class="modal-card-foot">
+
+      <form action="{{ url_for('delete_post', post_id=post.id) }}" method="POST">
+          <input class="button is-danger" type="submit" value="Delete">
+        </form>
+
+      <button class="button close-modal" data-modal-id="#my-modal" >close</button>
+    </footer>
   </div>
+</div>
+
+
+<script>
+function toggleModalClasses(event) {
+    var modalId = event.currentTarget.dataset.modalId;
+    var modal = $(modalId);
+    modal.toggleClass('is-active');
+    $('html').toggleClass('is-clipped');
+  };
+
+$('.open-modal').click(toggleModalClasses);
+
+$('.close-modal').click(toggleModalClasses);
+</script>
 
 {% endblock content %}
