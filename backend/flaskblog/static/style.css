@@ -4,10 +4,13 @@
   }
   .div-only-mobile{
     background:lightblue;
+    padding-top: 50px;
   }
   @media screen and (max-width : 1920px){
     .div-only-mobile{
     visibility:hidden;
+    display:none;
+    
     }
   }
   @media screen and (max-width : 768px){
@@ -17,12 +20,21 @@
     }
    .div-only-mobile{
     visibility:visible;
+    /* display: normal !important; */
+    display:block;
     }
     .subtitle.is-5.orange{
       font-size: 1.2rem;
       text-align: center !important;
     
     }
+    .section {
+
+      padding: 0rem 1.5rem !important;
+  
+    }
+
+
   }
 
 .overlay-img{
@@ -59,7 +71,14 @@ svg.svg-inline--fa.orange{
     width: 100%;
     height: 80px;
     border-radius: 60px 60px 0px 0px;
+    
 }
+
+.backround-white{
+  background: white;
+  
+}
+
 .tab-left {
     padding-left: 20px;
 }

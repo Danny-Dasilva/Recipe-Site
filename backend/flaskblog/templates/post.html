@@ -1,27 +1,62 @@
 {% extends "layout-2.html" %}
 {% block content %}
+<div class="div-only-mobile">
+    <h4 class="title is-4">{{ post.title }}<h4>
+      
+        <div class="overlay-img"></div>
+        
+        <div class="img-circular" style="background-image: url( {{ url_for('static', filename='post_img/' + post.image) }} );"></div>
+     
+            <div class="rounded-backround">
+
+            </div>
+
+            <div class="article-metadata backround-white">
+                <img class="profile-img" src="{{ url_for('static', filename='profile_pics/' + post.author.image_file) }}">
+                <a class="mr-2" href="{{ url_for('user_posts', username=post.author.username) }}">{{ post.author.username }}</a>
+                <small class="text-muted">{{ post.date_posted.strftime('%Y-%m-%d') }}</small>
+                <!-- {% if post.author == current_user %}
+                  <div>
+                    <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{{ url_for('update_post', post_id=post.id) }}">Update</a>
+                    <button type="button" class="btn btn-danger btn-sm m-1" data-toggle="modal" data-target="#deleteModal">Delete</button>
+                  </div>
+                {% endif %} -->
+              </div>
+
+
+</div>
 <section class="section">
-  <div class="container">
+
+
+    <div class="container" style="padding-top: 10px">
+    
   <div class="columns">
         <div class="column">
                 
                 <div class="desk">
+                    <div class="article-metadata">
+                        <img class="profile-img" src="{{ url_for('static', filename='profile_pics/' + post.author.image_file) }}">
+                        <a class="mr-2" href="{{ url_for('user_posts', username=post.author.username) }}">{{ post.author.username }}</a>
+                        <small class="text-muted">{{ post.date_posted.strftime('%Y-%m-%d') }}</small>
+                        <!-- {% if post.author == current_user %}
+                          <div>
+                            <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{{ url_for('update_post', post_id=post.id) }}">Update</a>
+                            <button type="button" class="btn btn-danger btn-sm m-1" data-toggle="modal" data-target="#deleteModal">Delete</button>
+                          </div>
+                        {% endif %} -->
+                      </div>
+
                         <img src="{{ url_for('static', filename='post_img/' + post.image) }}" alt="">
+                        
                 </div>
-                <div class="div-only-mobile">
-                        <h4 class="title is-4">{{ post.title }}<h4>
-                            <div class="overlay-img"></div>
-                            
-                            <div class="img-circular" style="background-image: url( {{ url_for('static', filename='post_img/' + post.image) }} );"></div>
-                                <div class="rounded-backround">
-
-                                </div>
-
-
-                </div>
+                
+                
             </div>
 
     <div class="column is-three-fifths tab-left">
+
+
+      
             <h1 class="title is-1 desk">{{ post.title }}<h1>
         <h5 class="subtitle orange is-5">
             <i class="far fa-clock orange"></i> {{ post.time }}
@@ -30,6 +65,10 @@
             &nbsp; &nbsp;
             <i class="fas fa-fire orange"></i> {{ post.cal }}
         </h5>
+
+
+         
+
         <div class="ingredietns">
                 <h5 class="title is-5">Ingredients</h5>
                 <table class="table is-fullwidth">
@@ -73,5 +112,25 @@
   </div>
   </div>
 </section>
+
+<!-- Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="deleteModalLabel">Delete Post?</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <form action="{{ url_for('delete_post', post_id=post.id) }}" method="POST">
+            <input class="btn btn-danger" type="submit" value="Delete">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 
 {% endblock content %}
