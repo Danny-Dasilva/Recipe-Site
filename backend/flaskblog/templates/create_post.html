@@ -1,51 +1,202 @@
-{% extends "layout.html" %}
+{% extends "layout-2.html" %}
 {% block content %}
-<div class="content-section">
-    <form method="POST" action=""enctype="multipart/form-data">
-        {{ form.hidden_tag() }}
-        <fieldset class="form-group">
-            <legend class="border-bottom mb-4">{{ legend }}</legend>
-            <div class="form-group">
-                {{ form.title.label(class="form-control-label") }}
-                {% if form.title.errors %}
-                    {{ form.title(class="form-control form-control-lg is-invalid") }}
-                    <div class="invalid-feedback">
-                        {% for error in form.title.errors %}
-                            <span>{{ error }}</span>
-                        {% endfor %}
-                    </div>
-                {% else %}
-                    {{ form.title(class="form-control form-control-lg") }}
-                {% endif %}
-            </div>
-            <div class="form-group">
-                {{ form.content.label(class="form-control-label") }}
-                {% if form.content.errors %}
-                    {{ form.content(class="form-control form-control-lg is-invalid") }}
-                    <div class="invalid-feedback">
-                        {% for error in form.content.errors %}
-                            <span>{{ error }}</span>
-                        {% endfor %}
-                    </div>
-                {% else %}
-                    {{ form.content(class="form-control form-control-lg") }}
-                {% endif %}
-            </div>
-            <div class="form-group">
-                {{ form.picture1.label() }}
-                {{ form.picture1(class="form-control-file") }}
-                {% if form.picture1.errors %}
-                    {% for error in form.picture1.errors %}
-                        <span class="text-danger">{{ error }}</span></br>
-                    {% endfor %}
-                {% endif %}
-            </div>  
+<section class="section">
+  
 
-        </fieldset>
-        <div class="form-group">
-            {{ form.submit(class="btn btn-outline-info") }}
-        </div>
-    </form>
+ 
+<div class="container">
+  <div class="columns">
+  
+      <div class="column">
+    
+    <h1 class="title">Title</h1>
+  <input class="input is-primary" type="text" id="title" placeholder="e.g. Title" >
+  </div>
 </div>
-{% endblock content %}
+<div class="columns">
+  <div class="column"> 
+    <p>Time: </p> 
+    <input class="input is-info" type="text" id="time" placeholder="e.g. 30 min" ></div>
+  <div class="column">  
+    <p>Number of people:</p>  
+    <input class="input is-info" type="text" id="serves" placeholder="e.g. 2 people" ></div>
+ 
+  <div class="column">
+      <p>Calories: </p>  
+      <input class="input is-info" type="text" id="cal" placeholder="e.g. 350 calories" >
+    </div>
+  </div>
+  
+  
+  
+ 
+  
+  <div class="columns">
+    <div class="column">
 
+        <p>Add Ingredient: </p>
+        <input class="input is-orange" type="text" id="firstname" placeholder="e.g. 350 calories" >  
+        <a class="button is-primary"  onclick='changeText2()' value='2'><i class="fas fa-plus" style="font-size:1.4em !important"></i> </a>
+        
+        <br>
+        <p>Current Ingredients</p>
+        <ol id="demo"></ol>
+        
+    </div>
+      
+    
+  </div>
+   
+
+
+
+
+<button id="test">Test values</button>
+
+<form action="" method="post" name="adminForm" class="form-inline">
+<div id="tagsForm" class="sortable">
+
+
+
+
+</div>
+</div>
+
+</section>
+<script>
+$("#tagsForm").sortable({ connectWith: ".sortable" });
+
+$(document).on('click', '.A', function(){ 
+
+  let amount = getValues().length + 1;
+  $('#tagsForm').innerHTML = $('#tagsForm').append(`<div class="columns" id="item${amount}"><div class="column is-one-third"><textarea class="textarea item" placeholder="e.g. Hello world" id="value${amount}"></textarea></div><div class="column"> <a class="button is-light"><i class="fas fa-arrows-alt"></i> </a> <a class="button is-primary A" id="add" ><i class="fas fa-plus" style="font-size:1.4em !important"></i> </a> <button class="button is-danger" type="button" onclick="removeDiv('item${amount}')"><span class="fa fa-trash"></span></button></div></div>`);
+})
+
+function removeDiv(id){
+$(`#${id}`).remove();
+}
+
+function getValues(){
+let valueArr = [];
+for(let elem of document.getElementsByClassName('item')){
+  valueArr.push(elem.value);
+}
+return valueArr;
+}
+
+
+
+$('#test').click(function() {
+  var steps = getValues();
+  console.log(steps)
+  steps.push();
+  title = document.getElementById('title').value;
+  time = document.getElementById('time').value;
+  serves = document.getElementById('serves').value;
+  cal = document.getElementById('cal').value; 
+  ingredients.push($('#demo').val())
+  steps1 = JSON.stringify({steps})
+  ingredients1 = JSON.stringify({ingredients})
+  idata = { 'title': title, 'time': time,'serves': serves, time,'cal': cal, 'steps': steps, 'ingredients': ingredients }
+  console.log(idata)
+  $.ajax({
+        type: "POST",
+        contentType: "application/json;charset=utf-8",
+        url: "/post/{{post_id}}/update",
+        traditional: "true",
+        data: JSON.stringify(idata),
+        dataType: "json",
+        success: function() {
+          console.log('working')
+            window.location.href = "/post/{{post_id}}";
+            },
+
+        });
+      console.log(ingredients);
+  });
+
+
+
+
+var list = document.getElementById('demo');
+var lastid = 0;
+var ingredients = []
+function changeText2() {
+  var firstname = document.getElementById('firstname').value;
+  ingredients.push(firstname)
+  var entry = document.createElement('li');
+  entry.appendChild(document.createTextNode(firstname + '\xa0\xa0\xa0\xa0\xa0\xa0\xa0'));
+  entry.setAttribute('id','item'+lastid);
+  var removeButton = document.createElement('button');
+  removeButton.className = "button is-danger tab"; 
+  removeButton.appendChild(document.createTextNode("delete"));
+  removeButton.setAttribute('onClick','removeName("'+'item'+lastid+'")');
+  entry.appendChild(removeButton);
+  lastid+=1;
+  list.appendChild(entry);
+  document.getElementById('firstname').value = ""
+ 
+
+}
+
+
+function removeName(itemid){
+  var item = document.getElementById(itemid);
+  list.removeChild(item);
+
+  var arrdel = item.firstChild.wholeText;
+  var index = ingredients.indexOf(arrdel);
+  if (index !== -1) ingredients.splice(index, 1);
+
+}
+
+var a = document.getElementById("title");
+a.value = "{{ post.title }}";
+var a = document.getElementById("time");
+a.value = "{{ post.time }}";
+var a = document.getElementById("serves");
+a.value = "{{ post.serves }}";
+var a = document.getElementById("cal");
+a.value = "{{ post.cal }}"
+
+var ingredients =  {{ ingred|safe }}
+console.log(ingredients)
+var filtered = ingredients.filter(Boolean)
+var ingredLen = filtered.length;
+
+for (var i = 0; i < ingredLen; i++) {
+    firstname = filtered[i]
+    var entry = document.createElement('li');
+    entry.appendChild(document.createTextNode(firstname + '\xa0\xa0\xa0\xa0\xa0\xa0\xa0'));
+    entry.setAttribute('id','item'+lastid);
+    var removeButton = document.createElement('button');
+    removeButton.className = "button is-danger tab"; 
+    removeButton.appendChild(document.createTextNode("delete"));
+    removeButton.setAttribute('onClick','removeName("'+'item'+lastid+'")');
+    entry.appendChild(removeButton);
+    lastid+=1;
+    list.appendChild(entry);
+   
+}
+
+var steps =  {{ steps|safe }}
+var filt = steps.filter(Boolean)
+console.log(steps)
+var stepLen = filt.length;
+
+for (var i = 0; i < stepLen; i++) {
+    let amount = getValues().length + 1;
+    $('#tagsForm').innerHTML = $('#tagsForm').append(`<div class="columns" id="item${amount}"><div class="column is-one-third"><textarea class="textarea item" placeholder="e.g. Hello world" id="value${amount}"></textarea></div><div class="column"> <a class="button is-light"><i class="fas fa-arrows-alt"></i> </a> <a class="button is-primary A" id="add" ><i class="fas fa-plus" style="font-size:1.4em !important"></i> </a> <button class="button is-danger" type="button" onclick="removeDiv('item${amount}')"><span class="fa fa-trash"></span></button></div></div>`);
+    // var page = $('#tagsForm').find(`div.page#${amount}`);
+    // console.log(filtered[i])
+    var a = document.getElementById(`value${amount}`);
+    a.value = `${filt[i]}`
+}
+
+
+
+
+ </script>
+
+
+{% endblock content %}

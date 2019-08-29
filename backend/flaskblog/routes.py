@@ -183,7 +183,7 @@ def update_post(post_id):
     elif request.method == 'GET':
         ingred = post.ingredients
         steps = post.steps
-    return render_template('create_post1.html', title='Update Post',
+    return render_template('create_post.html', title='Update Post',
                            post=post, ingred=json.dumps(ingred), post_id=post_id, steps=json.dumps(steps), legend='Update Post')
 
 
